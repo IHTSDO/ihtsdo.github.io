@@ -1,0 +1,1413 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Query Service</title><meta name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"><style type="text/css">
+body { background-image: url('images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article" title="Query Service"><div class="titlepage"><div><div><h1 class="title"><a name="d0e3"></a>Query Service</h1></div><div><div class="author"><h3 class="author"><span class="orgname">IHTSDO</span><div class="address"><p><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="city">Copenhagen&nbsp;K</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="street">Gammeltorv&nbsp;4,&nbsp;1.</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="postcode">1457</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="country">Denmark</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div></h3></div></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#d0e24">Query service repository structure</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e40">Maven Modules</a></span></dt><dt><span class="section"><a href="#d0e142">Query service build profiles</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e189">Maven setup</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e222">Project checkout</a></span></dt><dt><span class="section"><a href="#d0e230">Maven build</a></span></dt><dt><span class="section"><a href="#d0e240">Integration tests</a></span></dt><dt><span class="section"><a href="#d0e250">Deploy to app server</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e291">Query Client</a></span></dt><dd><dl><dt><span class="section"><a href="#d0e307">HelloExample</a></span></dt><dt><span class="section"><a href="#d0e331">KindOfQueryExample</a></span></dt></dl></dd><dt><span class="section"><a href="#d0e379">Query Implementation</a></span></dt><dt><span class="section"><a href="#d0e384">Query Integration Tests</a></span></dt><dt><span class="section"><a href="#d0e389">Query Service</a></span></dt><dt><span class="section"><a href="#d0e397">Data Display Objects</a></span></dt><dt><span class="section"><a href="#d0e402">Documentation</a></span></dt></dl></div><div class="section" title="Query service repository structure"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e24"></a>Query service repository structure</h2></div></div></div><p>The query service top-level project is the query-parent project that defines the root of
+        the repository structure. The query service repository holds a maven multi-module project
+        manages the sources and documents for the project. Understanding Maven is a prerequisite to
+        understanding how to build and work with the query service. More information on Maven is
+        available at the <a class="link" href="http://maven.apache.org" target="_top">Maven</a> web site.</p><p>Maven supports project aggregation in addition to project inheritance through its module
+        structure. See <a class="link" href="http://maven.apache.org/guides/mini/guide-multiple-modules.html" target="_top">Maven's
+            Guide to Working with Multiple Modules</a> and <a class="link" href="http://maven.apache.org/guides/introduction/introduction-to-the-pom.html" target="_top">Maven's Introduction to the POM</a> for more information about Maven modules,
+        project inheritance, and project aggregation. </p><div class="section" title="Maven Modules"><div class="titlepage"><div><div><h3 class="title"><a name="d0e40"></a>Maven Modules</h3></div></div></div><p>Within the top level project are six maven modules (subprojects), some of which are
+            only built when a particular build profile is activated.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Client</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>group id: org.ihtsdo.otf</p></li><li class="listitem"><p>artifact id: query-client</p></li><li class="listitem"><p>directory: query-client</p></li><li class="listitem"><p>build profiles: default, all, query-service,
+                                    integration-tests, documentation</p></li></ul></div></li><li class="listitem"><p>Service</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>group id: org.ihtsdo.otf</p></li><li class="listitem"><p>artifact id: query-service</p></li><li class="listitem"><p>directory: query-service</p></li><li class="listitem"><p>build profiles:  all, query-service, integration-tests,
+                                    documentation</p></li></ul></div></li><li class="listitem"><p>Implementation</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>group id: org.ihtsdo.otf</p></li><li class="listitem"><p>artifact id: query-implementation</p></li><li class="listitem"><p>directory: query-implementation</p></li><li class="listitem"><p>build profiles:  all, query-service, integration-tests,
+                                    documentation</p></li></ul></div></li><li class="listitem"><p>JAXB objects</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>group id: org.ihtsdo.otf</p></li><li class="listitem"><p>artifact id: query-jaxb-objects</p></li><li class="listitem"><p>directory: query-jaxb-objects</p></li><li class="listitem"><p>build profiles: all, query-service, integration-tests,
+                                    documentation</p></li></ul></div></li><li class="listitem"><p>Integration tests</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>group id: org.ihtsdo.otf</p></li><li class="listitem"><p>artifact id: query-integration-tests</p></li><li class="listitem"><p>directory: query-integration-tests</p></li><li class="listitem"><p>build profiles: all, integration-tests, documentation</p></li></ul></div></li><li class="listitem"><p>Documentation</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>group id: org.ihtsdo.otf</p></li><li class="listitem"><p>artifact id: query-documentation</p></li><li class="listitem"><p>directory: query-documentation</p></li><li class="listitem"><p>build profiles: all, documentation</p></li></ul></div></li></ol></div></div><div class="section" title="Query service build profiles"><div class="titlepage"><div><div><h3 class="title"><a name="d0e142"></a>Query service build profiles</h3></div></div></div><p>The query service defines three build profiles described in the following sections.
+            For more information on build profiles, see Maven's<a class="link" href="http://maven.apache.org/guides/introduction/introduction-to-profiles.html" target="_top">Introduction to build profiles</a>.</p><div class="section" title="Default build profile"><div class="titlepage"><div><div><h4 class="title"><a name="d0e150"></a>Default build profile</h4></div></div></div><p>The default build profile consists of the modules that build when no profile is
+                specifically specified. By default the following modules are built:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Client</p></li><li class="listitem"><p>JAXB objects</p></li></ol></div><p>This profile will provide a sufficient build to test the query client provided the
+                repository access is properly configured, and can download the Maven XSD artifacts
+                the JAXB Objects requires. </p><p>These artifacts should be in the IHTSDO public of the IHTSDO maven repository, and
+                should be able to download automatically by developers who do not have a user
+                account (THIS IS UNTESTED!).</p></div><div class="section" title="Query Service build profile"><div class="titlepage"><div><div><h4 class="title"><a name="d0e166"></a>Query Service build profile</h4></div></div></div><p>This profile will build the query service and dependent modules. This project has
+                more dependencies, including dependencies in the 3rd party part of the IHTSDO maven
+                repository which is password protected. </p></div><div class="section" title="Integration tests build profile"><div class="titlepage"><div><div><h4 class="title"><a name="d0e171"></a>Integration tests build profile</h4></div></div></div><p>The integration tests build profile adds the integration tests module to the
+                build when the build profile id <span class="italic">integration-tests</span>
+                is activated.  The integration tests are not part of the default build profile
+                because they have an external dependency on a Berkeley SNOMED database that is
+                rather large, and downloading and opening this database may not be necessary for all
+                types of development. Omitting this module from the default build profile makes the
+                default build rapid. </p><p>The build time for the integration tests module takes about 1 min 20 sec on a
+                high-spec developers laptop, while the other modules in this project take between
+                0.5 and 5 seconds. </p></div><div class="section" title="Documentation profile"><div class="titlepage"><div><div><h4 class="title"><a name="d0e181"></a>Documentation profile</h4></div></div></div><p>The documentation build profile adds the integration tests module and the
+                documentation module to the build when the build profile id <span class="italic">documentation</span> is activated. Generation of documentation depends of
+                proper execution of the integration tests module, and therefore is removed from the
+                default build profile secondary to the resource requirements and build time of the
+                integration tests module. </p></div></div></div><div class="section" title="Maven setup"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e189"></a>Maven setup</h2></div></div></div><p>Developers must either install Maven to use from the command line, use an IDE that has
+            Maven already integrated (IntelliJ IDEA, Netbeans), or add a plugin to their IDE
+            (Eclipse) that adds Maven support. Instructions on installing Maven for use from the
+            command line are available at Maven's <a class="link" href="http://maven.apache.org/download.cgi" target="_top">download site</a>. Integration
+            information for IntelliJ IDEA is available from the Jetbrains wiki for <a class="link" href="http://wiki.jetbrains.net/intellij/Creating_and_importing_Maven_projects" target="_top">creating and importing maven projects</a>. Integration information for Netbeans
+            is available from Netbean's <a class="link" href="http://wiki.netbeans.org/Maven" target="_top">Maven wiki
+                page</a>.</p><p>To access the artifact dependencies necessary to build the project, the Maven
+            settings.xml file must be appropriately configured. More information about the
+            settings.xml file and it's location is available on Maven's <a class="link" href="http://maven.apache.org/settings.html" target="_top">Settings Reference</a> web
+            page. </p><p>Developers will need an account to access the IHTSDO's repository, which can be
+            requested from Rory Davidson. In future releases, the client will be buildable using
+            only a public repository that does not require a user account, but the settings.xml file
+            will still have to be properly configured. </p><div class="example"><a name="d0e210"></a><p class="title"><b>Example&nbsp;1.&nbsp;Example settings.xml file</b></p><div class="example-contents"><p>
+                </p><div class="programlistingco"><pre class="programlisting">                    
+&lt;?xml version="1.0" encoding="UTF-8"?&gt; 
+&lt;settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation=
+"http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd"&gt;&gt; 
+     &lt;servers&gt; 
+         &lt;server&gt;
+             &lt;id&gt;maestro&lt;/id&gt; 
+             &lt;username&gt;username&lt;/username&gt;
+             &lt;password&gt;password&lt;/password&gt; 
+          &lt;/server&gt; 
+      &lt;/servers&gt; 
+      &lt;mirrors&gt;
+         &lt;mirror&gt; 
+             &lt;id&gt;maestro&lt;/id&gt; 
+             &lt;mirrorOf&gt;external:*&lt;/mirrorOf&gt;
+             &lt;name&gt;IHTSDO Maestro&lt;/name&gt;
+ &lt;url&gt;https://mgr.servers.aceworkspace.net/apps/ihtsdo-archiva/repository/all/&lt;/url&gt;
+         &lt;/mirror&gt; 
+     &lt;/mirrors&gt; 
+&lt;/settings&gt; 
+                    </pre></div><p>
+            </p></div></div><br class="example-break"><div class="section" title="Project checkout"><div class="titlepage"><div><div><h3 class="title"><a name="d0e222"></a>Project checkout</h3></div></div></div><p>The Query service project can be checked out anonymously from GIT with this
+                command: </p><p><code class="code">$git clone https://github.com/IHTSDO/OTF-Query-Services.git</code></p></div><div class="section" title="Maven build"><div class="titlepage"><div><div><h3 class="title"><a name="d0e230"></a>Maven build</h3></div></div></div><p>The project can be built from a console with this command: </p><p><code class="code">$mvn clean install</code></p><p>This will do a maven build using the default profiles. The settings.xml must be
+                properly configured for this command succeed</p></div><div class="section" title="Integration tests"><div class="titlepage"><div><div><h3 class="title"><a name="d0e240"></a>Integration tests</h3></div></div></div><p>Integration tests can be enabled by activating the integration-tests profile, as
+                shown in the following command: </p><p><code class="code">$mvn clean install -P integration-tests</code></p><p>This will do a maven build using the default profiles. The settings.xml must be
+                properly configured for this command succeed.</p></div><div class="section" title="Deploy to app server"><div class="titlepage"><div><div><h3 class="title"><a name="d0e250"></a>Deploy to app server</h3></div></div></div><p>The default build command generates a <code class="code">.war</code> file that can be deployed
+                to an app server. Before deployment the app server must be properly configured with
+                adequate memory, and access to the Berkeley database folder. A .zip file of the
+                Berkeley databas foler can be accessed from the <a class="link" href="https://csfe.aceworkspace.net/sf/frs/do/listReleases/projects.the_ihtsdo_terminology_open_tool/frs.test_data" target="_top">file releases section</a> of the <a class="link" href="https://csfe.aceworkspace.net/sf/projects/the_ihtsdo_terminology_open_tool/" target="_top">Open Tooling Framework</a> website.</p><p>When the rest server starts (currently at first query), it opens the berkeleydb
+                located in the folder berkeley-db, wherever that relative path is on your server. On
+                my server, it is at:</p><p> /Users/kec/GlassFish_Server/glassfish/domains/ttk/config/berkeley-db </p><p> (the config directory of the domain appears to be the working directory) You can
+                override the location by setting a system property on the server:</p><p>
+                </p><pre class="programlisting">
+-Dorg.ihtsdo.otf.tcc.datastore.bdb-location=&lt;the location of the berkeley-db folder&gt;
+                </pre><p>
+            </p><p>It writes diagnostic output when opening the database as follows: </p><p>
+                </p><pre class="programlisting"> 
+INFO: QS_sprint2:_Query_rest_service was successfully deployed in 3,637 milliseconds. 
+INFO: org.ihtsdo.otf.tcc.datastore.bdb-location not set. Using default location of: berkeley-db 
+INFO: setup dbRoot: berkeley-db 
+INFO: absolute dbRoot: /Users/kec/GlassFish_Server/glassfish/domains/ttk/config/berkeley-db 
+INFO: NidCidMap readOnlyRecords: 812 
+INFO: NidCidMap mutableRecords: 0 
+                </pre><p>
+            </p><p>And takes a few minutes to open. Inside the test data is an old format view
+                coordinate... So it throws a serialization exception: </p><p>
+                </p><pre class="programlisting"> 
+SEVERE: java.io.StreamCorruptedException: unexpected block data at
+        java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1362) at
+        java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:1989) at
+        java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1913) at
+        java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1796)
+                </pre><p>
+            </p><p>Just ignore that&#8230; It will self heal.</p></div></div><div class="section" title="Query Client"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e291"></a>Query Client</h2></div></div></div><p>This query client module demonstrates how to connect to the query service REST server
+        using an <a class="link" href="http://jersey.java.net" target="_top">Apache Jersey 2.2</a> REST
+        client.</p><p>There are two example programs: <code class="code">HelloExample</code> and <code class="code">KindOfQueryExample</code>. </p><div class="section" title="HelloExample"><div class="titlepage"><div><div><h3 class="title"><a name="d0e307"></a>HelloExample</h3></div></div></div><p>The <code class="code">HelloExample</code> program, located in package,
+                <code class="code">org.ihtsdo.otf.query.rest.client.examples</code> is a simple program that
+            sends a hello request to the rest server. </p><p>This program is simply to test connectivity and server status. A simple request of
+                <code class="code">http://api.snomedtools.com/query-service/hello/frank</code> should return the
+            following to the console:</p><p><code class="code">200</code></p><p><code class="code">hello frank.</code></p><p>The java file contains comments on each line to show the setup of the client, sending
+            the request, and processing the result. The program has a main() and therefore can be
+            invoked from within most IDE's by right clicking on the file, and selecting a run or
+            debug option. Please review the java file for more details. </p></div><div class="section" title="KindOfQueryExample"><div class="titlepage"><div><div><h3 class="title"><a name="d0e331"></a>KindOfQueryExample</h3></div></div></div><p>The <code class="code">KindOfQueryExample</code> program, located in package,
+                <code class="code">org.ihtsdo.otf.query.rest.client.examples</code> performs a simple kind of
+            query using the rest server, and returns data display objects with the results. </p><p>The structure of a query is defined by </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>a <code class="code">ViewCoordinate</code> that defines what version of the terminology
+                        to query against, as well as other information like the preferred language
+                        for results.</p></li><li class="listitem"><p>a FOR that defines the set of components to iterate over</p></li><li class="listitem"><p>a LET that defines references to concept specifications or other view
+                        coordinates used by where clauses. </p></li><li class="listitem"><p>a WHERE that defined the where clauses for the query</p></li><li class="listitem"><p>a RETURN that defines that type of components to return (Concepts,
+                        descriptions, etc). </p></li></ul></div><p>  This example's main method will setup a kind-of query that will return
+            concepts that are kind-of SNOMED "allergic asthma" concepts. </p><p>Below is an example output that is generated by a successful run (xml formatting was
+            added after the fact to make the results display better in this document).</p><p>
+            </p><div class="example"><a name="d0e368"></a><p class="title"><b>Example&nbsp;2.&nbsp;<code class="code">KindOfQueryExample</code> output</b></p><div class="example-contents"><p>
+                    </p><pre class="programlisting">
+                INFO: Results: 
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;ns4:result-list xmlns:ns2="http://query.jaxb.otf.ihtsdo.org"
+    xmlns:ns4="http://display.object.jaxb.otf.ihtsdo.org"
+    xmlns:ns3="http://api.chronicle.jaxb.otf.ihtsdo.org"&gt;
+    &lt;theResults xsi:type="ns4:conceptChronicleDdo"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+        &lt;descriptionList/&gt;
+        &lt;destinationRelationshipList/&gt;
+        &lt;mediaList/&gt;
+        &lt;refsetMemberList/&gt;
+        &lt;conceptAttributes&gt;
+            &lt;additionalIdList&gt;
+                &lt;additionalId xsi:type="ns4:identifierLongDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483506&lt;/nid&gt;
+                        &lt;text&gt;SNOMED integer id&lt;/text&gt;
+                        &lt;uuid&gt;0418a591-f75b-39ad-be2c-3ab849326da9&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;91340006&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483478&lt;/nid&gt;
+                        &lt;text&gt;CTV3_ID&lt;/text&gt;
+                        &lt;uuid&gt;7f951a3a-39e0-3fba-92a0-1138edafa4c0&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;XE0YS&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483476&lt;/nid&gt;
+                        &lt;text&gt;SNOMED RT Id&lt;/text&gt;
+                        &lt;uuid&gt;740f47ef-caf3-3e4e-bdeb-39792b408f1c&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;D2-51190&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+            &lt;/additionalIdList&gt;
+            &lt;annotationList/&gt;
+            &lt;versionList/&gt;
+            &lt;componentNid&gt;-2146452539&lt;/componentNid&gt;
+            &lt;primordialComponentUuid&gt;8981e7b8-c195-3548-a877-57505fcc1ec0&lt;/primordialComponentUuid&gt;
+        &lt;/conceptAttributes&gt;
+        &lt;conceptReference&gt;
+            &lt;nid&gt;-2146452539&lt;/nid&gt;
+            &lt;text&gt;Extrinsic asthma with status asthmaticus (disorder)&lt;/text&gt;
+            &lt;uuid&gt;8981e7b8-c195-3548-a877-57505fcc1ec0&lt;/uuid&gt;
+        &lt;/conceptReference&gt;
+        &lt;primordialUuid&gt;8981e7b8-c195-3548-a877-57505fcc1ec0&lt;/primordialUuid&gt;
+        &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+        &lt;refexPolicy&gt;REFEX_MEMBERS_AND_REFSET_MEMBERS&lt;/refexPolicy&gt;
+        &lt;relationshipPolicy&gt;DESTINATION_RELATIONSHIPS&lt;/relationshipPolicy&gt;
+        &lt;versionPolicy&gt;ACTIVE_VERSIONS&lt;/versionPolicy&gt;
+    &lt;/theResults&gt;
+    &lt;theResults xsi:type="ns4:conceptChronicleDdo"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+        &lt;descriptionList/&gt;
+        &lt;destinationRelationshipList/&gt;
+        &lt;mediaList/&gt;
+        &lt;refsetMemberList/&gt;
+        &lt;conceptAttributes&gt;
+            &lt;additionalIdList&gt;
+                &lt;additionalId xsi:type="ns4:identifierLongDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1170230400000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483506&lt;/nid&gt;
+                        &lt;text&gt;SNOMED integer id&lt;/text&gt;
+                        &lt;uuid&gt;0418a591-f75b-39ad-be2c-3ab849326da9&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;424643009&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1170230400000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483478&lt;/nid&gt;
+                        &lt;text&gt;CTV3_ID&lt;/text&gt;
+                        &lt;uuid&gt;7f951a3a-39e0-3fba-92a0-1138edafa4c0&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;XUf7Y&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1170230400000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483476&lt;/nid&gt;
+                        &lt;text&gt;SNOMED RT Id&lt;/text&gt;
+                        &lt;uuid&gt;740f47ef-caf3-3e4e-bdeb-39792b408f1c&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;DF-007C8&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+            &lt;/additionalIdList&gt;
+            &lt;annotationList/&gt;
+            &lt;versionList/&gt;
+            &lt;componentNid&gt;-2146452418&lt;/componentNid&gt;
+            &lt;primordialComponentUuid&gt;904794b3-1536-382f-9323-f7eb3c7e343f&lt;/primordialComponentUuid&gt;
+        &lt;/conceptAttributes&gt;
+        &lt;conceptReference&gt;
+            &lt;nid&gt;-2146452418&lt;/nid&gt;
+            &lt;text&gt;Extrinsic asthma&lt;/text&gt;
+            &lt;uuid&gt;904794b3-1536-382f-9323-f7eb3c7e343f&lt;/uuid&gt;
+        &lt;/conceptReference&gt;
+        &lt;primordialUuid&gt;904794b3-1536-382f-9323-f7eb3c7e343f&lt;/primordialUuid&gt;
+        &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+        &lt;refexPolicy&gt;REFEX_MEMBERS_AND_REFSET_MEMBERS&lt;/refexPolicy&gt;
+        &lt;relationshipPolicy&gt;DESTINATION_RELATIONSHIPS&lt;/relationshipPolicy&gt;
+        &lt;versionPolicy&gt;ACTIVE_VERSIONS&lt;/versionPolicy&gt;
+    &lt;/theResults&gt;
+    &lt;theResults xsi:type="ns4:conceptChronicleDdo"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+        &lt;descriptionList/&gt;
+        &lt;destinationRelationshipList/&gt;
+        &lt;mediaList/&gt;
+        &lt;refsetMemberList/&gt;
+        &lt;conceptAttributes&gt;
+            &lt;additionalIdList&gt;
+                &lt;additionalId xsi:type="ns4:identifierLongDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1044000000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483506&lt;/nid&gt;
+                        &lt;text&gt;SNOMED integer id&lt;/text&gt;
+                        &lt;uuid&gt;0418a591-f75b-39ad-be2c-3ab849326da9&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;389145006&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1044000000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483478&lt;/nid&gt;
+                        &lt;text&gt;CTV3_ID&lt;/text&gt;
+                        &lt;uuid&gt;7f951a3a-39e0-3fba-92a0-1138edafa4c0&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;XUXNz&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1044000000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483476&lt;/nid&gt;
+                        &lt;text&gt;SNOMED RT Id&lt;/text&gt;
+                        &lt;uuid&gt;740f47ef-caf3-3e4e-bdeb-39792b408f1c&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;DC-57006&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+            &lt;/additionalIdList&gt;
+            &lt;annotationList/&gt;
+            &lt;versionList/&gt;
+            &lt;componentNid&gt;-2146452198&lt;/componentNid&gt;
+            &lt;primordialComponentUuid&gt;531abe20-8324-3db9-9104-8bcdbf251ac7&lt;/primordialComponentUuid&gt;
+        &lt;/conceptAttributes&gt;
+        &lt;conceptReference&gt;
+            &lt;nid&gt;-2146452198&lt;/nid&gt;
+            &lt;text&gt;Atopic asthma&lt;/text&gt;
+            &lt;uuid&gt;531abe20-8324-3db9-9104-8bcdbf251ac7&lt;/uuid&gt;
+        &lt;/conceptReference&gt;
+        &lt;primordialUuid&gt;531abe20-8324-3db9-9104-8bcdbf251ac7&lt;/primordialUuid&gt;
+        &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+        &lt;refexPolicy&gt;REFEX_MEMBERS_AND_REFSET_MEMBERS&lt;/refexPolicy&gt;
+        &lt;relationshipPolicy&gt;DESTINATION_RELATIONSHIPS&lt;/relationshipPolicy&gt;
+        &lt;versionPolicy&gt;ACTIVE_VERSIONS&lt;/versionPolicy&gt;
+    &lt;/theResults&gt;
+    &lt;theResults xsi:type="ns4:conceptChronicleDdo"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+        &lt;descriptionList/&gt;
+        &lt;destinationRelationshipList/&gt;
+        &lt;mediaList/&gt;
+        &lt;refsetMemberList/&gt;
+        &lt;conceptAttributes&gt;
+            &lt;additionalIdList&gt;
+                &lt;additionalId xsi:type="ns4:identifierLongDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483506&lt;/nid&gt;
+                        &lt;text&gt;SNOMED integer id&lt;/text&gt;
+                        &lt;uuid&gt;0418a591-f75b-39ad-be2c-3ab849326da9&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;59327009&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483478&lt;/nid&gt;
+                        &lt;text&gt;CTV3_ID&lt;/text&gt;
+                        &lt;uuid&gt;7f951a3a-39e0-3fba-92a0-1138edafa4c0&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;XE0YU&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483476&lt;/nid&gt;
+                        &lt;text&gt;SNOMED RT Id&lt;/text&gt;
+                        &lt;uuid&gt;740f47ef-caf3-3e4e-bdeb-39792b408f1c&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;D2-51220&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+            &lt;/additionalIdList&gt;
+            &lt;annotationList/&gt;
+            &lt;versionList/&gt;
+            &lt;componentNid&gt;-2146294976&lt;/componentNid&gt;
+            &lt;primordialComponentUuid&gt;e3fc10f9-641d-3d01-8fac-07e52ded5e49&lt;/primordialComponentUuid&gt;
+        &lt;/conceptAttributes&gt;
+        &lt;conceptReference&gt;
+            &lt;nid&gt;-2146294976&lt;/nid&gt;
+            &lt;text&gt;Intrinsic asthma with status asthmaticus (disorder)&lt;/text&gt;
+            &lt;uuid&gt;e3fc10f9-641d-3d01-8fac-07e52ded5e49&lt;/uuid&gt;
+        &lt;/conceptReference&gt;
+        &lt;primordialUuid&gt;e3fc10f9-641d-3d01-8fac-07e52ded5e49&lt;/primordialUuid&gt;
+        &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+        &lt;refexPolicy&gt;REFEX_MEMBERS_AND_REFSET_MEMBERS&lt;/refexPolicy&gt;
+        &lt;relationshipPolicy&gt;DESTINATION_RELATIONSHIPS&lt;/relationshipPolicy&gt;
+        &lt;versionPolicy&gt;ACTIVE_VERSIONS&lt;/versionPolicy&gt;
+    &lt;/theResults&gt;
+    &lt;theResults xsi:type="ns4:conceptChronicleDdo"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+        &lt;descriptionList/&gt;
+        &lt;destinationRelationshipList/&gt;
+        &lt;mediaList/&gt;
+        &lt;refsetMemberList/&gt;
+        &lt;conceptAttributes&gt;
+            &lt;additionalIdList&gt;
+                &lt;additionalId xsi:type="ns4:identifierLongDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1170230400000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483506&lt;/nid&gt;
+                        &lt;text&gt;SNOMED integer id&lt;/text&gt;
+                        &lt;uuid&gt;0418a591-f75b-39ad-be2c-3ab849326da9&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;423889005&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1170230400000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483478&lt;/nid&gt;
+                        &lt;text&gt;CTV3_ID&lt;/text&gt;
+                        &lt;uuid&gt;7f951a3a-39e0-3fba-92a0-1138edafa4c0&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;XUf7Z&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1170230400000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483476&lt;/nid&gt;
+                        &lt;text&gt;SNOMED RT Id&lt;/text&gt;
+                        &lt;uuid&gt;740f47ef-caf3-3e4e-bdeb-39792b408f1c&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;DF-007C9&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+            &lt;/additionalIdList&gt;
+            &lt;annotationList/&gt;
+            &lt;versionList/&gt;
+            &lt;componentNid&gt;-2146294741&lt;/componentNid&gt;
+            &lt;primordialComponentUuid&gt;b714e0a9-33f0-30ad-a795-8fb9437b4af6&lt;/primordialComponentUuid&gt;
+        &lt;/conceptAttributes&gt;
+        &lt;conceptReference&gt;
+            &lt;nid&gt;-2146294741&lt;/nid&gt;
+            &lt;text&gt;Non-IgE mediated allergic asthma&lt;/text&gt;
+            &lt;uuid&gt;b714e0a9-33f0-30ad-a795-8fb9437b4af6&lt;/uuid&gt;
+        &lt;/conceptReference&gt;
+        &lt;primordialUuid&gt;b714e0a9-33f0-30ad-a795-8fb9437b4af6&lt;/primordialUuid&gt;
+        &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+        &lt;refexPolicy&gt;REFEX_MEMBERS_AND_REFSET_MEMBERS&lt;/refexPolicy&gt;
+        &lt;relationshipPolicy&gt;DESTINATION_RELATIONSHIPS&lt;/relationshipPolicy&gt;
+        &lt;versionPolicy&gt;ACTIVE_VERSIONS&lt;/versionPolicy&gt;
+    &lt;/theResults&gt;
+    &lt;theResults xsi:type="ns4:conceptChronicleDdo"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+        &lt;descriptionList/&gt;
+        &lt;destinationRelationshipList/&gt;
+        &lt;mediaList/&gt;
+        &lt;refsetMemberList/&gt;
+        &lt;conceptAttributes&gt;
+            &lt;additionalIdList&gt;
+                &lt;additionalId xsi:type="ns4:identifierLongDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483506&lt;/nid&gt;
+                        &lt;text&gt;SNOMED integer id&lt;/text&gt;
+                        &lt;uuid&gt;0418a591-f75b-39ad-be2c-3ab849326da9&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;63088003&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483478&lt;/nid&gt;
+                        &lt;text&gt;CTV3_ID&lt;/text&gt;
+                        &lt;uuid&gt;7f951a3a-39e0-3fba-92a0-1138edafa4c0&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;XE0YR&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483476&lt;/nid&gt;
+                        &lt;text&gt;SNOMED RT Id&lt;/text&gt;
+                        &lt;uuid&gt;740f47ef-caf3-3e4e-bdeb-39792b408f1c&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;D2-51180&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+            &lt;/additionalIdList&gt;
+            &lt;annotationList/&gt;
+            &lt;versionList/&gt;
+            &lt;componentNid&gt;-2143907524&lt;/componentNid&gt;
+            &lt;primordialComponentUuid&gt;1a630c84-d723-309f-88ca-3a0bc0e0ab17&lt;/primordialComponentUuid&gt;
+        &lt;/conceptAttributes&gt;
+        &lt;conceptReference&gt;
+            &lt;nid&gt;-2143907524&lt;/nid&gt;
+            &lt;text&gt;Extrinsic asthma without status asthmaticus (disorder)&lt;/text&gt;
+            &lt;uuid&gt;1a630c84-d723-309f-88ca-3a0bc0e0ab17&lt;/uuid&gt;
+        &lt;/conceptReference&gt;
+        &lt;primordialUuid&gt;1a630c84-d723-309f-88ca-3a0bc0e0ab17&lt;/primordialUuid&gt;
+        &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+        &lt;refexPolicy&gt;REFEX_MEMBERS_AND_REFSET_MEMBERS&lt;/refexPolicy&gt;
+        &lt;relationshipPolicy&gt;DESTINATION_RELATIONSHIPS&lt;/relationshipPolicy&gt;
+        &lt;versionPolicy&gt;ACTIVE_VERSIONS&lt;/versionPolicy&gt;
+    &lt;/theResults&gt;
+    &lt;theResults xsi:type="ns4:conceptChronicleDdo"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+        &lt;descriptionList/&gt;
+        &lt;destinationRelationshipList/&gt;
+        &lt;mediaList/&gt;
+        &lt;refsetMemberList/&gt;
+        &lt;conceptAttributes&gt;
+            &lt;additionalIdList&gt;
+                &lt;additionalId xsi:type="ns4:identifierLongDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483506&lt;/nid&gt;
+                        &lt;text&gt;SNOMED integer id&lt;/text&gt;
+                        &lt;uuid&gt;0418a591-f75b-39ad-be2c-3ab849326da9&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;233685005&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483478&lt;/nid&gt;
+                        &lt;text&gt;CTV3_ID&lt;/text&gt;
+                        &lt;uuid&gt;7f951a3a-39e0-3fba-92a0-1138edafa4c0&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;X1022&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483476&lt;/nid&gt;
+                        &lt;text&gt;SNOMED RT Id&lt;/text&gt;
+                        &lt;uuid&gt;740f47ef-caf3-3e4e-bdeb-39792b408f1c&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;D2-00013&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+            &lt;/additionalIdList&gt;
+            &lt;annotationList/&gt;
+            &lt;versionList/&gt;
+            &lt;componentNid&gt;-2143875845&lt;/componentNid&gt;
+            &lt;primordialComponentUuid&gt;ccdd5b1e-74f6-35f6-bf93-3385348f7912&lt;/primordialComponentUuid&gt;
+        &lt;/conceptAttributes&gt;
+        &lt;conceptReference&gt;
+            &lt;nid&gt;-2143875845&lt;/nid&gt;
+            &lt;text&gt;Intrinsic asthma with asthma attack (disorder)&lt;/text&gt;
+            &lt;uuid&gt;ccdd5b1e-74f6-35f6-bf93-3385348f7912&lt;/uuid&gt;
+        &lt;/conceptReference&gt;
+        &lt;primordialUuid&gt;ccdd5b1e-74f6-35f6-bf93-3385348f7912&lt;/primordialUuid&gt;
+        &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+        &lt;refexPolicy&gt;REFEX_MEMBERS_AND_REFSET_MEMBERS&lt;/refexPolicy&gt;
+        &lt;relationshipPolicy&gt;DESTINATION_RELATIONSHIPS&lt;/relationshipPolicy&gt;
+        &lt;versionPolicy&gt;ACTIVE_VERSIONS&lt;/versionPolicy&gt;
+    &lt;/theResults&gt;
+    &lt;theResults xsi:type="ns4:conceptChronicleDdo"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+        &lt;descriptionList/&gt;
+        &lt;destinationRelationshipList/&gt;
+        &lt;mediaList/&gt;
+        &lt;refsetMemberList/&gt;
+        &lt;conceptAttributes&gt;
+            &lt;additionalIdList&gt;
+                &lt;additionalId xsi:type="ns4:identifierLongDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483506&lt;/nid&gt;
+                        &lt;text&gt;SNOMED integer id&lt;/text&gt;
+                        &lt;uuid&gt;0418a591-f75b-39ad-be2c-3ab849326da9&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;30352005&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483478&lt;/nid&gt;
+                        &lt;text&gt;CTV3_ID&lt;/text&gt;
+                        &lt;uuid&gt;7f951a3a-39e0-3fba-92a0-1138edafa4c0&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;XUBMl&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483476&lt;/nid&gt;
+                        &lt;text&gt;SNOMED RT Id&lt;/text&gt;
+                        &lt;uuid&gt;740f47ef-caf3-3e4e-bdeb-39792b408f1c&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;D2-51112&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+            &lt;/additionalIdList&gt;
+            &lt;annotationList/&gt;
+            &lt;versionList/&gt;
+            &lt;componentNid&gt;-2143486226&lt;/componentNid&gt;
+            &lt;primordialComponentUuid&gt;dba55554-caa3-34bc-9ce8-b788f3a787ce&lt;/primordialComponentUuid&gt;
+        &lt;/conceptAttributes&gt;
+        &lt;conceptReference&gt;
+            &lt;nid&gt;-2143486226&lt;/nid&gt;
+            &lt;text&gt;Allergic-infective asthma (disorder)&lt;/text&gt;
+            &lt;uuid&gt;dba55554-caa3-34bc-9ce8-b788f3a787ce&lt;/uuid&gt;
+        &lt;/conceptReference&gt;
+        &lt;primordialUuid&gt;dba55554-caa3-34bc-9ce8-b788f3a787ce&lt;/primordialUuid&gt;
+        &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+        &lt;refexPolicy&gt;REFEX_MEMBERS_AND_REFSET_MEMBERS&lt;/refexPolicy&gt;
+        &lt;relationshipPolicy&gt;DESTINATION_RELATIONSHIPS&lt;/relationshipPolicy&gt;
+        &lt;versionPolicy&gt;ACTIVE_VERSIONS&lt;/versionPolicy&gt;
+    &lt;/theResults&gt;
+    &lt;theResults xsi:type="ns4:conceptChronicleDdo"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+        &lt;descriptionList/&gt;
+        &lt;destinationRelationshipList/&gt;
+        &lt;mediaList/&gt;
+        &lt;refsetMemberList/&gt;
+        &lt;conceptAttributes&gt;
+            &lt;additionalIdList&gt;
+                &lt;additionalId xsi:type="ns4:identifierLongDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483506&lt;/nid&gt;
+                        &lt;text&gt;SNOMED integer id&lt;/text&gt;
+                        &lt;uuid&gt;0418a591-f75b-39ad-be2c-3ab849326da9&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;12428000&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483478&lt;/nid&gt;
+                        &lt;text&gt;CTV3_ID&lt;/text&gt;
+                        &lt;uuid&gt;7f951a3a-39e0-3fba-92a0-1138edafa4c0&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;H3310&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483476&lt;/nid&gt;
+                        &lt;text&gt;SNOMED RT Id&lt;/text&gt;
+                        &lt;uuid&gt;740f47ef-caf3-3e4e-bdeb-39792b408f1c&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;D2-51210&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+            &lt;/additionalIdList&gt;
+            &lt;annotationList/&gt;
+            &lt;versionList/&gt;
+            &lt;componentNid&gt;-2142649850&lt;/componentNid&gt;
+            &lt;primordialComponentUuid&gt;2eb77f24-816b-30b8-82a7-26fb04be352f&lt;/primordialComponentUuid&gt;
+        &lt;/conceptAttributes&gt;
+        &lt;conceptReference&gt;
+            &lt;nid&gt;-2142649850&lt;/nid&gt;
+            &lt;text&gt;Intrinsic asthma without status asthmaticus (disorder)&lt;/text&gt;
+            &lt;uuid&gt;2eb77f24-816b-30b8-82a7-26fb04be352f&lt;/uuid&gt;
+        &lt;/conceptReference&gt;
+        &lt;primordialUuid&gt;2eb77f24-816b-30b8-82a7-26fb04be352f&lt;/primordialUuid&gt;
+        &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+        &lt;refexPolicy&gt;REFEX_MEMBERS_AND_REFSET_MEMBERS&lt;/refexPolicy&gt;
+        &lt;relationshipPolicy&gt;DESTINATION_RELATIONSHIPS&lt;/relationshipPolicy&gt;
+        &lt;versionPolicy&gt;ACTIVE_VERSIONS&lt;/versionPolicy&gt;
+    &lt;/theResults&gt;
+    &lt;theResults xsi:type="ns4:conceptChronicleDdo"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+        &lt;descriptionList/&gt;
+        &lt;destinationRelationshipList/&gt;
+        &lt;mediaList/&gt;
+        &lt;refsetMemberList/&gt;
+        &lt;conceptAttributes&gt;
+            &lt;additionalIdList&gt;
+                &lt;additionalId xsi:type="ns4:identifierLongDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483506&lt;/nid&gt;
+                        &lt;text&gt;SNOMED integer id&lt;/text&gt;
+                        &lt;uuid&gt;0418a591-f75b-39ad-be2c-3ab849326da9&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;233681001&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483478&lt;/nid&gt;
+                        &lt;text&gt;CTV3_ID&lt;/text&gt;
+                        &lt;uuid&gt;7f951a3a-39e0-3fba-92a0-1138edafa4c0&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;X101y&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483476&lt;/nid&gt;
+                        &lt;text&gt;SNOMED RT Id&lt;/text&gt;
+                        &lt;uuid&gt;740f47ef-caf3-3e4e-bdeb-39792b408f1c&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;D2-51101&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+            &lt;/additionalIdList&gt;
+            &lt;annotationList/&gt;
+            &lt;versionList/&gt;
+            &lt;componentNid&gt;-2140611618&lt;/componentNid&gt;
+            &lt;primordialComponentUuid&gt;7ddc3edc-d49d-3f0f-b5ab-81efb44e5e62&lt;/primordialComponentUuid&gt;
+        &lt;/conceptAttributes&gt;
+        &lt;conceptReference&gt;
+            &lt;nid&gt;-2140611618&lt;/nid&gt;
+            &lt;text&gt;Extrinsic asthma with asthma attack (disorder)&lt;/text&gt;
+            &lt;uuid&gt;7ddc3edc-d49d-3f0f-b5ab-81efb44e5e62&lt;/uuid&gt;
+        &lt;/conceptReference&gt;
+        &lt;primordialUuid&gt;7ddc3edc-d49d-3f0f-b5ab-81efb44e5e62&lt;/primordialUuid&gt;
+        &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+        &lt;refexPolicy&gt;REFEX_MEMBERS_AND_REFSET_MEMBERS&lt;/refexPolicy&gt;
+        &lt;relationshipPolicy&gt;DESTINATION_RELATIONSHIPS&lt;/relationshipPolicy&gt;
+        &lt;versionPolicy&gt;ACTIVE_VERSIONS&lt;/versionPolicy&gt;
+    &lt;/theResults&gt;
+    &lt;theResults xsi:type="ns4:conceptChronicleDdo"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+        &lt;descriptionList/&gt;
+        &lt;destinationRelationshipList/&gt;
+        &lt;mediaList/&gt;
+        &lt;refsetMemberList/&gt;
+        &lt;conceptAttributes&gt;
+            &lt;additionalIdList&gt;
+                &lt;additionalId xsi:type="ns4:identifierLongDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483506&lt;/nid&gt;
+                        &lt;text&gt;SNOMED integer id&lt;/text&gt;
+                        &lt;uuid&gt;0418a591-f75b-39ad-be2c-3ab849326da9&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:long" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;56968009&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483478&lt;/nid&gt;
+                        &lt;text&gt;CTV3_ID&lt;/text&gt;
+                        &lt;uuid&gt;7f951a3a-39e0-3fba-92a0-1138edafa4c0&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;H35y7&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+                &lt;additionalId xsi:type="ns4:identifierStringDdo"&gt;
+                    &lt;authorReference&gt;
+                        &lt;nid&gt;-2147483611&lt;/nid&gt;
+                        &lt;text&gt;user&lt;/text&gt;
+                        &lt;uuid&gt;f7495b58-6630-3499-a44e-2052b5fcf06c&lt;/uuid&gt;
+                    &lt;/authorReference&gt;
+                    &lt;fxTime&gt;
+                        &lt;time&gt;1012464000000&lt;/time&gt;
+                    &lt;/fxTime&gt;
+                    &lt;moduleReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/moduleReference&gt;
+                    &lt;pathReference&gt;
+                        &lt;nid&gt;-2147483534&lt;/nid&gt;
+                        &lt;text&gt;SNOMED Core&lt;/text&gt;
+                        &lt;uuid&gt;8c230474-9f11-30ce-9cad-185a96fd03a2&lt;/uuid&gt;
+                    &lt;/pathReference&gt;
+                    &lt;statusString&gt;ACTIVE&lt;/statusString&gt;
+                    &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+                    &lt;authorityRef&gt;
+                        &lt;nid&gt;-2147483476&lt;/nid&gt;
+                        &lt;text&gt;SNOMED RT Id&lt;/text&gt;
+                        &lt;uuid&gt;740f47ef-caf3-3e4e-bdeb-39792b408f1c&lt;/uuid&gt;
+                    &lt;/authorityRef&gt;
+                    &lt;denotation xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                        &gt;D2-54262&lt;/denotation&gt;
+                &lt;/additionalId&gt;
+            &lt;/additionalIdList&gt;
+            &lt;annotationList/&gt;
+            &lt;versionList/&gt;
+            &lt;componentNid&gt;-2140298245&lt;/componentNid&gt;
+            &lt;primordialComponentUuid&gt;7aa5d3d5-97a5-349e-b2f0-9a1638e8a176&lt;/primordialComponentUuid&gt;
+        &lt;/conceptAttributes&gt;
+        &lt;conceptReference&gt;
+            &lt;nid&gt;-2140298245&lt;/nid&gt;
+            &lt;text&gt;Saw dust asthma&lt;/text&gt;
+            &lt;uuid&gt;7aa5d3d5-97a5-349e-b2f0-9a1638e8a176&lt;/uuid&gt;
+        &lt;/conceptReference&gt;
+        &lt;primordialUuid&gt;7aa5d3d5-97a5-349e-b2f0-9a1638e8a176&lt;/primordialUuid&gt;
+        &lt;viewCoordinateUuid&gt;bd58d1df-b3be-4c6a-9c01-89c7561fafe8&lt;/viewCoordinateUuid&gt;
+        &lt;refexPolicy&gt;REFEX_MEMBERS_AND_REFSET_MEMBERS&lt;/refexPolicy&gt;
+        &lt;relationshipPolicy&gt;DESTINATION_RELATIONSHIPS&lt;/relationshipPolicy&gt;
+        &lt;versionPolicy&gt;ACTIVE_VERSIONS&lt;/versionPolicy&gt;
+    &lt;/theResults&gt;
+&lt;/ns4:result-list&gt;
+Aug 28, 2013 10:11:24 PM org.ihtsdo.otf.query.rest.client.examples.KindOfQueryExample main
+INFO: Returned concept: Extrinsic asthma with status asthmaticus (disorder)
+Aug 28, 2013 10:11:24 PM org.ihtsdo.otf.query.rest.client.examples.KindOfQueryExample main
+INFO: Returned concept: Extrinsic asthma
+Aug 28, 2013 10:11:24 PM org.ihtsdo.otf.query.rest.client.examples.KindOfQueryExample main
+INFO: Returned concept: Atopic asthma
+Aug 28, 2013 10:11:24 PM org.ihtsdo.otf.query.rest.client.examples.KindOfQueryExample main
+INFO: Returned concept: Intrinsic asthma with status asthmaticus (disorder)
+Aug 28, 2013 10:11:24 PM org.ihtsdo.otf.query.rest.client.examples.KindOfQueryExample main
+INFO: Returned concept: Non-IgE mediated allergic asthma
+Aug 28, 2013 10:11:24 PM org.ihtsdo.otf.query.rest.client.examples.KindOfQueryExample main
+INFO: Returned concept: Extrinsic asthma without status asthmaticus (disorder)
+Aug 28, 2013 10:11:24 PM org.ihtsdo.otf.query.rest.client.examples.KindOfQueryExample main
+INFO: Returned concept: Intrinsic asthma with asthma attack (disorder)
+Aug 28, 2013 10:11:24 PM org.ihtsdo.otf.query.rest.client.examples.KindOfQueryExample main
+INFO: Returned concept: Allergic-infective asthma (disorder)
+Aug 28, 2013 10:11:24 PM org.ihtsdo.otf.query.rest.client.examples.KindOfQueryExample main
+INFO: Returned concept: Intrinsic asthma without status asthmaticus (disorder)
+Aug 28, 2013 10:11:24 PM org.ihtsdo.otf.query.rest.client.examples.KindOfQueryExample main
+INFO: Returned concept: Extrinsic asthma with asthma attack (disorder)
+Aug 28, 2013 10:11:24 PM org.ihtsdo.otf.query.rest.client.examples.KindOfQueryExample main
+INFO: Returned concept: Saw dust asthma
+        
+                    </pre><p>
+                </p></div></div><p><br class="example-break">
+        </p></div></div><div class="section" title="Query Implementation"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e379"></a>Query Implementation</h2></div></div></div><p>This query implementation module implements queries against Terminology Component
+        Chronicle service, and proved a pure java implementation of query capabilities that may be
+        called independently of the REST service, and is also called by the REST service to perform
+        queries.</p></div><div class="section" title="Query Integration Tests"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e384"></a>Query Integration Tests</h2></div></div></div><p>This module performs tests against a SNOMED CT database.</p></div><div class="section" title="Query Service"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e389"></a>Query Service</h2></div></div></div><p>This module implements a <a class="link" href="http://jersey.java.net" target="_top">Jersey 2.2</a> REST
+        service for querying.</p></div><div class="section" title="Data Display Objects"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e397"></a>Data Display Objects</h2></div></div></div><p>This module generates java data display objects derived from running the JAXB xjc against
+        the the underlying implementation. This XML Schema Document is then compiled using JAXB
+        schemagen to generate java files. The .xsd document may be similarly useful for generating
+        JSON for javascript developers. Future versions of the project will provide more complete
+        examples using the JAXB generated data display objects to reduce client dependencies on
+        other libraries. </p></div><div class="section" title="Documentation"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e402"></a>Documentation</h2></div></div></div><p>This project uses <a class="link" href="http://www.docbook.org" target="_top">Docbook 5</a> for
+        generating documentation. Docbook enabled distributed editing with configuration mangament,
+        and multiple distribution modalities. Docbook generation is integrated with Maven using
+            <a class="link" href="http://code.google.com/p/docbkx-tools/" target="_top">Docbkx Tools</a>, and
+        follows in the footsteps of other development projects such as  <a class="link" href="http://blog.sonatype.com/people/2008/04/writing-a-book-with-maven-part-i/" target="_top">Sonatype's Maven book</a> and <a class="link" href="https://www.jboss.org/pressgang/jdg" target="_top">JBoss's community documentation</a>. More details on how to contribute documentation
+        will come in subsequent versions of this documentation. </p></div></div></body></html>

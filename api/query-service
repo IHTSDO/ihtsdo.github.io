@@ -1,0 +1,70 @@
+{
+	"apiVersion": "0.2",
+	"swaggerVersion": "1.2",
+	"basePath": "http://api.snomedtools.com",
+	"resourcePath": "/query-service",
+	"produces": ["application/xml"],
+	"apis": [
+		{
+			"path": "/query-service/query",
+			"operations": [
+				{
+					"method": "GET",
+					"summary": "Query terminology module",
+					"notes": "This is used to call the hosted environment using query parameters based upon XQuery's FLOWR expressions",
+					"type": "Concept",
+					"nickname": "querySCT",
+					"parameters": [
+						{
+							"name": "for",
+							"description": "Defines the set of components to iterate over.",
+							"required": true,
+							"type": "string",
+							"paramType": "path"
+						}, 
+						{
+							"paramType": "path",
+							"name": "let",
+							"description": "Defines references to concept specifications or other view coordinates used by where clauses",
+							"type": "string",
+							"required": false
+						}, 
+						{
+							"paramType": "path",
+							"name": "where",
+							"description": "Defines the where clauses for the query",
+							"type": "string",
+							"required": false
+						}, 
+						{
+							"paramType": "path",
+							"name": "return",
+							"description": "Defines component types to be return (Concepts, descriptions, etc)",
+							"type": "string",
+							"required": true
+						}, 
+						{
+							"paramType": "path",
+							"name": "viewpoint",
+							"description": "Defines what version of the terminology to query against, as well as other information like the preferred language for results",
+							"type": "string",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	],
+	"models": {
+		"Concept": {
+			"id": "Concept",
+			"properties": {
+				"id": {
+					"type": "integer",
+					"format": "int64",
+					"description": "Unique identifier for the concept"
+				}
+			}
+		}
+	}
+}

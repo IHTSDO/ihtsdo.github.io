@@ -1,0 +1,22 @@
+[
+    {
+        "section"    : "overview",
+        "title"      : "",
+        "paragraph"  : "<p class=lead>The framework is a set of standardized application programming interfaces (APIs) that define fundamental software services to be consumed by business applications, which would be developed to satisfy Members’ terminology use cases:<ul><li>A core framework of modules that the IHTSDO would use for all internal use cases</li><li>The plugin framework provides a mechanism for either the IHTSDO or other interested stakeholders (members, vendors, implementers) to provide more functionality on top of the framework in defined sets of use cases (for example mapping, refset management).</li></ul>"
+    },
+    {
+        "section"    : "further",
+        "title"      : "What",
+        "paragraph"  : "This framework is based on approaching the suite of tools provided by the IHTSDO as combinations of different self-contained modules. This approach breaks the architecture down into smaller, self-contained parts that can be reused for different purposes as either core modules, plugins or infrastructure modules.<p>Following a use case driven, service oriented approach, we can expose the right amount of complexity which is appropriate to the use case. Use cases and the services can evolve as user organizations mature.<p>The OTF and its implementation will be made open source in accordance with IHTSDO policy. As a consequence of the IHTSDO’s planned investment in the OTF, investment in the Workbench will be reduced to that required to support the maintenance of the application for existing purposes. The IHTSDO will continually review the need to invest in new functionality in the Workbench if an appropriate case is put forward."
+    },
+    {
+        "section"    : "further",
+        "title"      : "Why?",
+        "paragraph"  : "This gives the IHTSDO a flexible framework to start from and to choose what is in our interest (for internal use) and those which are common across our members (whilst leaving the flexibility in an open source project for external devs/implementers to take the modules they want and use or improve them).<p>A service oriented approach within an open source philosophy, provides IHTSDO the platform to drive and lead the development these services without necessarily doing all the development in house. It means there can be multiple development organizations involved, reducing dependency on any one supplier, all working with a defined set of interfaces, designed and agreed with the development community."
+    },
+    {
+        "section"    : "further",
+        "title"      : "Roadmap",
+        "paragraph"  : "The IHTSDO has identified reference sets, terminology mapping, and translation as the three highest priority use cases, in that order.<ul><li>Query Module</li><li>Refset Services</li><li>Refset Management</li><li>User Administration</li><li>Mapping</li></ul>"
+    }
+]

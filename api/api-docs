@@ -1,0 +1,10 @@
+{
+	"apiVersion": "1.0.0",
+	"swaggerVersion": "1.2",
+	"apis": [
+		{
+			"path": "http://otf.snomedtools.com/api/query-service",
+			"description": "Querying SNOMED CT"
+		}
+	]
+}

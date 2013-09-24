@@ -1,0 +1,47 @@
+[
+    {
+        "section"    : "overview",
+        "title"      : "",
+        "paragraph"  : "These modules represent a specific set of business use case groupins, which can be characterised as business domains."
+    },
+    {
+        "section"    : "modules",
+        "title"      : "Mapping Module",
+        "paragraph"  : "This modules provides the functionality to allow users to produce complex maps between SNOMED CT and other terminoplogies."
+    },
+    {
+        "section"    : "modules",
+        "title"      : "Translation Module",
+        "paragraph"  : "The Translation Module provides the functionality for users to include different languages in the terminology and specifically in a member's national extension."
+    },
+    {
+        "section"    : "modules",
+        "title"      : "Terminology Authoring Module",
+        "paragraph"  : "This is the module which will propvide the interface which enables the terminology itself to be modified, updated and added to."
+    },
+    {
+        "section"    : "modules",
+        "title"      : "Member Exchange Module",
+        "paragraph"  : "This will provide an area where IHTSDO Members & Affiliates can share and download different IHTSDO artefacts including reference sets and ..."
+    },
+    {
+        "section"    : "modules",
+        "title"      : "Content Request Module",
+        "paragraph"  : "This module provices functionality for external stakeholders to submit content requests for the main SNOMED CT."
+    },
+    {
+        "section"    : "modules",
+        "title"      : "Namespace Module",
+        "paragraph"  : "This module is used to provide management functionality on the application of namespaces."
+    },
+    {
+        "section"    : "modules",
+        "title"      : "Documentation Module",
+        "paragraph"  : "This module provides a common set of functionality to ensure that documentatio is common across all areas."
+    },
+    {
+        "section"    : "modules",
+        "title"      : "Refset Management Module",
+        "paragraph"  : "Refset functionality is covered in two areas of the OTF. This services module covers the front end business requirements including management and editing of reference sets."
+    }
+]

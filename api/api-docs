@@ -3,7 +3,7 @@
 	"swaggerVersion": "1.2",
 	"apis": [
 		{
-			"path": "http://otf.snomedtools.com/api/query-service",
+			"path": "http://ihtsdo.github.io/api/query-service",
 			"description": "Querying SNOMED CT"
 		}
 	]

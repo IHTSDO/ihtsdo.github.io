@@ -4,27 +4,21 @@
         "phase"		 : "In Design",
         "title"      : "Interface Adapter approach",
         "output"	 : "Abstracting complexity from the rich backend, to meet simpler front end requirements via the REST interface",
-        "date"       : "2013-09-27"
+        "date"       : "2013-10-05"
     },
     {
         "section"    : "dev",
         "phase"		 : "In Dev",
         "title"      : "Refset Management Module",
         "output"	 : "Refset building functionality in a browser front end",
-        "date"       : "2013-09-30"
+        "date"       : "2013-10-10"
     },
     {
         "section"    : "dev",
         "phase"		 : "In Dev",
         "title"      : "Query Module Sprint 3",
         "output"	 : "Improvements in the query module to expand the query capabilities & add simpler API calls",
-        "date"       : "2013-09-26"
-    },
-    {
-        "section"    : "next",
-        "title"      : "Interface Adapter -<br>Sprint 1",
-        "output"	 : "Provide a simplified, documented REST API on top of the query module",
-        "date"       : "2013-09-27"
+        "date"       : "2013-10-04"
     },
     {
         "section"    : "completed",

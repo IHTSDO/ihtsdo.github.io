@@ -105,219 +105,232 @@
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="col-md-5">
-					<p><strong>
-						Simple Retrievals
-						<br>
-						URL</strong></p>
+			<div class="panel-group" id="accordion">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title"><a class="accordion-toggle lead" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> Simple Queries </a></h4>
+					</div>
+					<div id="collapseOne" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<div class="table-responsive">
+								<table class="table table-striped">
+									<thead>
+										<th class=lead>URL</th>
+										<th class=lead>Parameters</th>
+										<th class=lead>Return</th>
+									</thead>
+									<tr>
+										<td><a href="http://www.informatics.com:8080/otf/query-service/uuid/285649006" target=_blank>http://www.informatics.com:8080/otf/query-service/uuid/{sctid}</a></td>
+										<td>
+										<dl>
+											<dt>
+												sctid
+											</dt>
+											<dd class="text-muted">
+												e.g. <a href="http://www.informatics.com:8080/otf/query-service/uuid/285649006" target=_blank>285649006</a>
+											</dd>
+										</dl></td>
+										<td>
+										<dl>
+											<dt>
+												text
+											</dt>
+											<dd class="text-muted">
+												<a href="http://www.informatics.com:8080/otf/query-service/uuid/285649006" target=_blank>example</a>
+											</dd>
+										</dl></td>
+									</tr>
+									<tr>
+										<td><a href="http://www.informatics.com:8080/otf/query-service/sctid/2b684fe1-8baf-34ef-9d2a-df03142c915a" target=_blank>http://www.informatics.com:8080/otf/query-service/sctid/{uuid}</a></td>
+										<td>
+										<dl>
+											<dt>
+												uuid
+											</dt>
+											<dd class="text-muted">
+												e.g. <a href="http://www.informatics.com:8080/otf/query-service/sctid/2b684fe1-8baf-34ef-9d2a-df03142c915a" target=_blank>2b684fe1-8baf-34ef-9d2a-df03142c915a</a>
+											</dd>
+										</dl></td>
+										<td>
+										<dl>
+											<dt>
+												text
+											</dt>
+											<dd class="text-muted">
+												<a href="http://www.informatics.com:8080/otf/query-service/sctid/2b684fe1-8baf-34ef-9d2a-df03142c915a" target=_blank>example</a>
+											</dd>
+										</dl></td>
+									</tr>
+									<tr>
+										<td><a href="http://browser.sparklingideas.co.uk/ontology/1/concept/" target=_blank>http://browser.snomedtools.com/ontology/1/concept/{id}</a></td>
+										<td>
+										<dl>
+											<dt>
+												sctid
+											</dt>
+											<dd class="text-muted">
+												e.g. <a href="http://browser.sparklingideas.co.uk/ontology/1/concept/285649006" target=_blank>285649006</a>
+											</dd>
+										</dl></td>
+										<td>
+										<dl>
+											<dt>
+												html
+											</dt>
+											<dd class="text-muted">
+												<a href="http://browser.sparklingideas.co.uk/ontology/1/concept/285649006" target=_blank>example</a>
+											</dd>
+											<dt>
+												json
+											</dt>
+											<dd class="text-muted">
+												<a href="http://browser.sparklingideas.co.uk/ontology/1/concept/json/285649006" target=_blank>example</a>
+											</dd>
+											<dt>
+												xml
+											</dt>
+											<dd class="text-muted">
+												<a href="http://browser.sparklingideas.co.uk/ontology/1/concept/xml/285649006" target=_blank>example</a>
+											</dd>
+										</dl></td>
+									</tr>
+									<tr>
+										<td><a href="http://browser.sparklingideas.co.uk/ontology/1/description/" target=_blank>http://browser.snomedtools.com/ontology/1/description/{id}</a></td>
+										<td>
+										<dl>
+											<dt>
+												sctid
+											</dt>
+											<dd class="text-muted">
+												e.g. <a href="http://browser.sparklingideas.co.uk/ontology/1/description/424716014" target=_blank>424716014</a>
+											</dd>
+										</dl></td>
+										<td>
+										<dl>
+											<dt>
+												html
+											</dt>
+											<dd class="text-muted">
+												<a href="http://browser.sparklingideas.co.uk/ontology/1/description/424716014" target=_blank>example</a>
+											</dd>
+											<dt>
+												json
+											</dt>
+											<dd class="text-muted">
+												<a href="http://browser.sparklingideas.co.uk/ontology/1/description/json/424716014" target=_blank>example</a>
+											</dd>
+											<dt>
+												xml
+											</dt>
+											<dd class="text-muted">
+												<a href="http://browser.sparklingideas.co.uk/ontology/1/description/xml/424716014" target=_blank>example</a>
+											</dd>
+										</dl></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="col-md-4">
-					<p class="text-center"><strong>
-						
-						<br>
-						Parameters</strong></p>
-				</div>
-				<div class="col-md-3">
-					<p class="text-center"><strong>
-						
-						<br>
-						Return</strong></p>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title"><a class="accordion-toggle lead" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"> Lucene Search using Apache Solr </a></h4>
+					</div>
+					<div id="collapseTwo" class="panel-collapse collapse">
+						<div class="panel-body">
+							<div class="table-responsive">
+								<table class="table table-striped">
+									<thead>
+										<th class=lead>URL</th>
+										<th class=lead>Parameters</th>
+										<th class=lead>Return</th>
+									</thead>
+									<tr>
+								<td>
+									<a href="http://solr.sparklingideas.co.uk/solr/concept/select" target=_blank>http://solr.snomedtools.com/concept/select</a>
+									<br>
+									<a href="http://solr.sparklingideas.co.uk/solr/description/select" target=_blank>http://solr.snomedtools.com/description/select</a>
+									<br>
+									<br>
+									e.g.
+									<br>
+									<a href="http://solr.sparklingideas.co.uk/solr/concept/select?q=title:centrifugal+AND+active:true&rows=4" target=_blank>http://solr.snomedtools.com/concept/select?q=title:centrifugal+AND+active:true&rows=4</a>
+								</td>
+								<td>
+								<dl class="dl-horizontal">
+									<dt class="text-left">
+										q
+									</dt>
+									<dd class="text-muted">
+										text query across fields (default is all)
+										<br>
+										<em>e.g. 'centrifugal', 'active:true'</em>
+									</dd>
+									<dt>
+										wt
+									</dt>
+									<dd class="text-muted">
+										return format
+										<br>
+										e.g. <strong>xml</strong>, json, rdfs
+									</dd>
+									<dt>
+										fl
+									</dt>
+									<dd class="text-muted">
+										fields to be returned
+										<br>
+										e.g. id, title
+									</dd>
+									<dt>
+										sort
+									</dt>
+									<dd class="text-muted">
+										sort field and direction
+										<br>
+										e.g. title asc
+									</dd>
+									<dt>
+										rows
+									</dt>
+									<dd class="text-muted">
+										number of results are displayed at a time
+										<br>
+										e.g. 10
+									</dd>
+									<dt>
+										start
+									</dt>
+									<dd class="text-muted">
+										offset to the results to be displayed
+										<br>
+										e.g. 11, <strong>0</strong>
+									</dd>
+								</dl>
+								</td>
+								<td>
+								<dl>
+									<dt>
+										xml
+									</dt>
+									<dd class="text-muted">
+										<a href="http://solr.sparklingideas.co.uk/solr/concept/select?q=title:centrifugal+AND+force+AND+physical" target=_blank>example</a>
+									</dd>
+									<dt>
+										json
+									</dt>
+									<dd class="text-muted">
+										<a href="http://solr.sparklingideas.co.uk/solr/concept/select?q=title:centrifugal+AND+force+AND+physical&wt=json" target=_blank>example</a>
+									</dd>
+								</dl>
+							</td>
+							</tr>
+							</table>
+						</div>
+					</div>
 				</div>
 			</div>
-
-			<div class="row">
-				<div class="col-md-5">
-					<p>
-						<a href="http://www.informatics.com:8080/otf/query-service/uuid/285649006" target=_blank>http://www.informatics.com:8080/otf/query-service/uuid/{sctid}</a>
-					</p>
-				</div>
-				<div class="col-md-4">
-					<dl class="dl-horizontal">
-						<dt>
-							sctid
-						</dt>
-						<dd class="text-muted">
-							e.g. <a href="http://www.informatics.com:8080/otf/query-service/uuid/285649006" target=_blank>285649006</a>
-						</dd>
-					</dl>
-				</div>
-				<div class="col-md-3">
-					<dl class="dl-horizontal">
-						<dt>
-							text
-						</dt>
-						<dd class="text-muted">
-							<a href="http://www.informatics.com:8080/otf/query-service/uuid/285649006" target=_blank>example</a>
-						</dd>
-					</dl>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-5">
-					<p>
-						<a href="http://www.informatics.com:8080/otf/query-service/sctid/2b684fe1-8baf-34ef-9d2a-df03142c915a" target=_blank>http://www.informatics.com:8080/otf/query-service/sctid/{uuid}</a>
-					</p>
-				</div>
-				<div class="col-md-4">
-					<dl class="dl-horizontal">
-						<dt>
-							uuid
-						</dt>
-						<dd class="text-muted">
-							e.g. <a href="http://www.informatics.com:8080/otf/query-service/sctid/2b684fe1-8baf-34ef-9d2a-df03142c915a" target=_blank>2b684fe1-8baf-34ef-9d2a-df03142c915a</a>
-						</dd>
-					</dl>
-				</div>
-				<div class="col-md-3">
-					<dl class="dl-horizontal">
-						<dt>
-							text
-						</dt>
-						<dd class="text-muted">
-							<a href="http://www.informatics.com:8080/otf/query-service/sctid/2b684fe1-8baf-34ef-9d2a-df03142c915a" target=_blank>example</a>
-						</dd>
-					</dl>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-5">
-					<p>
-						<a href="http://browser.sparklingideas.co.uk/ontology/1/concept/" target=_blank>http://browser.snomedtools.com/ontology/1/concept/{id}</a>
-					</p>
-				</div>
-				<div class="col-md-4">
-					<dl class="dl-horizontal">
-						<dt>
-							sctid
-						</dt>
-						<dd class="text-muted">
-							e.g. <a href="http://browser.sparklingideas.co.uk/ontology/1/concept/285649006" target=_blank>285649006</a>
-						</dd>
-					</dl>
-				</div>
-				<div class="col-md-3">
-					<dl class="dl-horizontal">
-						<dt>
-							html
-						</dt>
-						<dd class="text-muted">
-							<a href="http://browser.sparklingideas.co.uk/ontology/1/concept/285649006" target=_blank>example</a>
-						</dd>
-						<dt>
-							json
-						</dt>
-						<dd class="text-muted">
-							<a href="http://browser.sparklingideas.co.uk/ontology/1/concept/json/285649006" target=_blank>example</a>
-						</dd>
-						<dt>
-							xml
-						</dt>
-						<dd class="text-muted">
-							<a href="http://browser.sparklingideas.co.uk/ontology/1/concept/xml/285649006" target=_blank>example</a>
-						</dd>
-					</dl>
-				</div>
-			</div>
-
-
-			<hr>
-			<div class="row">
-				<div class="col-md-5">
-					<p><strong>
-						Lucene Search using <a href="http://lucene.apache.org/solr/" target=_blank>Apache Solr</a>
-						<br>
-						URL</strong>
-					</p>
-				</div>
-				<div class="col-md-4">
-					<p class="text-center"><strong>
-						<br>
-						Parameters</strong></p>
-				</div>
-				<div class="col-md-3">
-					<p class="text-center"><strong>
-						<br>
-						Return</strong></p>
-				</div>
-			</div>
-
-
-			<div class="row">
-				<div class="col-md-5">
-					<p>
-						<a href="http://solr.sparklingideas.co.uk/solr/concept/select" target=_blank>http://solr.snomedtools.com/concept/select</a>
-						<br>
-						<a href="http://solr.sparklingideas.co.uk/solr/description/select" target=_blank>http://solr.snomedtools.com/description/select</a>
-						<br><br>
-						e.g.<br>
-						<a href="http://solr.sparklingideas.co.uk/solr/concept/select?q=leg" target=_blank>http://solr.snomedtools.com/concept/select?q=centrifugal</a>
-					</p>
-				</div>
-				<div class="col-md-4">
-					<dl class="dl-horizontal">
-						<dt class="text-left">
-							q
-						</dt>
-						<dd class="text-muted">
-							text query across all fields<br>
-							<em>e.g. 'centrifugal', '*:*'</em>
-						</dd>
-						<dt>
-							wt
-						</dt>
-						<dd class="text-muted">
-							return format<br>
-							e.g. <strong>xml</strong>, json, rdfs
-						</dd>
-						<dt>
-							fl
-						</dt>
-						<dd class="text-muted">
-							fields to be returned<br>
-							e.g. id, title
-						</dd>
-						<dt>
-							sort
-						</dt>
-						<dd class="text-muted">
-							sort field and direction<br>
-							e.g. title asc
-						</dd>
-						<dt>
-							rows
-						</dt>
-						<dd class="text-muted">
-							number of results are displayed at a time<br>
-							e.g. 10
-						</dd>
-						<dt>
-							start
-						</dt>
-						<dd class="text-muted">
-							offset to the results to be displayed<br>
-							e.g. 11, <strong>0</strong>
-						</dd>
-				</div>
-				<div class="col-md-3">
-					<dl class="dl-horizontal">
-						<dt>
-							xml
-						</dt>
-						<dd class="text-muted">
-							<a href="http://solr.sparklingideas.co.uk/solr/concept/select?q=title:centrifugal+AND+force+AND+physical" target=_blank>example</a>
-						</dd>
-						<dt>
-							json
-						</dt>
-						<dd class="text-muted">
-							<a href="http://solr.sparklingideas.co.uk/solr/concept/select?q=title:centrifugal+AND+force+AND+physical&wt=json" target=_blank>example</a>
-						</dd>
-					</dl>
-				</div>
-			</div>
-
-
 		</div>
 		<!-- footer -->
 		<div class="container">

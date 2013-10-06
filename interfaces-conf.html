@@ -120,7 +120,8 @@
 				<div class="col-md-2">
 				</div>
 				<div class="col-md-2">
-					<button class="btn btn-primary btn-large" disabled="disabled" class="btn" data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree">
+<!--					<button class="btn btn-primary btn-large" disabled="disabled" class="btn" data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree">
+	--></button>				<button class="btn btn-primary btn-large" class="btn" data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree">
 						Queries
 					</button>
 				</div>
@@ -402,6 +403,101 @@
 						</div>
 					</div>
 				</div>
+
+<!-- refset panel -->
+				<div class="panel">
+					<div id="collapseThree" class="panel-collapse collapse">
+						<div class="table-responsive">
+							<table class="table table-striped">
+								<thead>
+									<th class=lead>Description</th>
+									<th class=lead>URL</th>
+									<th class=lead>Parameters</th>
+									<th class=lead>Return</th>
+								</thead>
+								<tr>
+									<td>
+										List all refsets<br>
+										(for a logged in user)
+									</td>
+									<td>
+										<a href="http://refset.snomedtools.com/refsets.xml" target=_blank>http://refset.snomedtools.com/refsets.xml</a>
+										<br>
+										<a href="http://refset.snomedtools.com/refsets.json" target=_blank>http://refset.snomedtools.com/refsets.json</a>
+									<td>
+									<dl>
+										<dt>
+											authenticated user session
+										</dt>
+										<dd class="text-muted">
+											e.g. HTTP User Session
+										</dd>
+									</dl></td>
+									<td>
+									<dl>
+										<dt>
+											xml
+										</dt>
+										<dd class="text-muted">
+											<a href="http://refset.snomedtools.com/refsets.xml" target=_blank>example</a>
+										</dd>
+										<dt>
+											json
+										</dt>
+										<dd class="text-muted">
+											<a href="http://refset.snomedtools.com/refsets.json" target=_blank>example</a>
+										</dd>
+									</dl></td>
+								</tr>
+								<tr>
+									<td>
+										List all concepts in a givien refset<br>
+										(for a logged in user)
+									</td>
+									<td>
+										<a href="http://browser.snomedtools.com/refsets/refset/myrefset/concepts.xml" target=_blank>http://browser.snomedtools.com/refsets/refset/{public refset id}/concepts.xml</a>
+										<br>
+										<a href="http://browser.snomedtools.com/refsets/refset/myrefset/concepts.json" target=_blank>http://browser.snomedtools.com/refsets/refset/{public refset id}/concepts.json</a>
+									<td>
+									<dl>
+										<dt>
+											authenticated user session
+										</dt>
+										<dd class="text-muted">
+											e.g. HTTP User Session
+										</dd>
+										<dt>
+											myrefset id
+										</dt>
+										<dd class="text-muted">
+											public lable entered on refset creation
+											<br>
+											e.g. 'myrefset'
+										</dd>
+									</dl></td>
+									<td>
+									<dl>
+										<dt>
+											xml
+										</dt>
+										<dd class="text-muted">
+											<a href="http://browser.snomedtools.com/refsets/refset/myrefset/concepts.xml" target=_blank>example</a>
+										</dd>
+										<dt>
+											json
+										</dt>
+										<dd class="text-muted">
+											<a href="http://browser.snomedtools.com/refsets/refset/myrefset/concepts.json" target=_blank>example</a>
+										</dd>
+									</dl></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+
+
+
 			</div>
 		</div>
 		<!-- footer -->

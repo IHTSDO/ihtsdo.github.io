@@ -11,6 +11,11 @@
     },
     {
         "section"    : "general",
+        "title"      : "Consistant",
+        "paragraph"  : "Interfaces must not change and the deisgn of APIs must be constant across the whole framework."
+    },
+    {
+        "section"    : "general",
         "title"      : "Reuse",
         "paragraph"  : "Investigate the reuse of existing and proven solutions, internal and external, where appropriate."
     },

@@ -12,7 +12,7 @@
     {
         "section"    : "general",
         "title"      : "Consistant",
-        "paragraph"  : "Interfaces must not change and the deisgn of APIs must be constant across the whole framework."
+        "paragraph"  : "Interfaces must not change and the design of APIs must be constant across the whole framework."
     },
     {
         "section"    : "general",

@@ -1,24 +1,24 @@
 [
     {
         "section"    : "dev",
-        "phase"		 : "In Design",
-        "title"      : "Interface Adapter approach",
-        "output"	 : "Abstracting complexity from the rich backend, to meet simpler front end requirements via the REST interface",
-        "date"       : "2013-10-05"
+        "phase"		 : "In Analysis",
+        "title"      : "Mapping Service Module",
+        "output"	 : "Consolidating and creating the user stories for the IHTSDo Mapping Tool",
+        "date"       : "2013-11-12"
     },
     {
         "section"    : "dev",
         "phase"		 : "In Dev",
-        "title"      : "Refset Management Module",
+        "title"      : "Refset Management Module Sprint 2",
         "output"	 : "Refset building functionality in a browser front end",
-        "date"       : "2013-10-10"
+        "date"       : "2013-11-16"
     },
     {
         "section"    : "dev",
         "phase"		 : "In Dev",
-        "title"      : "Query Module Sprint 3",
-        "output"	 : "Improvements in the query module to expand the query capabilities & add simpler API calls",
-        "date"       : "2013-10-04"
+        "title"      : "Query Module Sprint 4",
+        "output"	 : "Finalising query module and clearing up deployment issues",
+        "date"       : "2013-11-09"
     },
     {
         "section"    : "completed",
@@ -28,9 +28,21 @@
     },
     {
         "section"    : "completed",
+        "title"      : "Refset Management Module Sprint 1",
+        "output"	 : "Refset building functionality in a browser front end",
+        "date"       : "2013-10-04"
+    },
+    {
+        "section"    : "completed",
         "title"      : "Query Module Sprint 2",
         "output"	 : "Improvements onto query API, with documentation.",
         "date"       : "2013-08-24"
+    },
+    {
+        "section"    : "completed",
+        "title"      : "Query Module Sprint 3",
+        "output"	 : "Improvements in the query module to expand the query capabilities & add simpler API calls",
+        "date"       : "2013-10-04"
     },
     {
         "section"    : "completed",
@@ -40,7 +52,12 @@
     },
     {
         "section"    : "future",
-        "title"      : "Mapping Module",
+        "title"      : "User Administration Module",
+        "date"       : "2014"
+    },
+    {
+        "section"    : "future",
+        "title"      : "Translation Module",
         "date"       : "2014"
     },
     {

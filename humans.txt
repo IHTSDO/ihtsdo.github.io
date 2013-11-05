@@ -1,0 +1,36 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+                              ,----,                                           
+                 ,--,       ,/   .`|                                ,----..    
+   ,---,       ,--.'|     ,`   .'  :   .--.--.        ,---,        /   /   \   
+,`--.' |    ,--,  | :   ;    ;     /  /  /    '.    .'  .' `\     /   .     :  
+|   :  : ,---.'|  : ' .'___,/    ,'  |  :  /`. /  ,---.'     \   .   /   ;.  \ 
+:   |  ' |   | : _' | |    :     |   ;  |  |--`   |   |  .`\  | .   ;   /  ` ; 
+|   :  | :   : |.'  | ;    |.';  ;   |  :  ;_     :   : |  '  | ;   |  ; \ ; | 
+'   '  ; |   ' '  ; : `----'  |  |    \  \    `.  |   ' '  ;  : |   :  | ; | ' 
+|   |  | '   |  .'. |     '   :  ;     `----.   \ '   | ;  .  | .   |  ' ' ' : 
+'   :  ; |   | :  | '     |   |  '     __ \  \  | |   | :  |  ' '   ;  \; /  | 
+|   |  ' '   : |  : ;     '   :  |    /  /`--'  / '   : | /  ;   \   \  ',  /  
+'   :  | |   | '  ,/      ;   |.'    '--'.     /  |   | '` ,/     ;   :    /   
+;   |.'  ;   : ;--'       '---'        `--'---'   ;   :  .'        \   \ .'    
+'---'    |   ,/                                   |   ,.'           `---`      
+         '---'                                    '---'                        
+                                                                               
+
+/* TEAM */
+		Chief, Developer, DevOps, and anything left: Rory Davidson
+		Contact: rda@ihtsdo.org
+
+/* THANKS */
+
+		ihtsdo.org
+		Reveal,js, 
+		the wider IHTSDO Tooling developer community
+
+/* SITE */
+		Domain name: snomedtools.org
+		Last update: 2013-11-05
+		Language: English
+		Standards: HTML5 CSS3
+		IDE: TextWrangler, Aptana

@@ -1,24 +1,36 @@
 [
     {
         "section"    : "dev",
-        "phase"		 : "In Analysis",
+        "phase"		 : "In Development",
         "title"      : "Mapping Service Module",
-        "output"	 : "Consolidating and creating the user stories for the IHTSDo Mapping Tool",
-        "date"       : "2013-11-12"
+        "output"	 : "Building foundtaion database, and libraries to enable following sprints",
+        "date"       : "2013-12-06"
     },
     {
         "section"    : "dev",
         "phase"		 : "In Dev",
         "title"      : "Refset Management Module Sprint 2",
         "output"	 : "Refset building functionality in a browser front end",
-        "date"       : "2013-11-16"
+        "date"       : "2013-12-13"
     },
     {
         "section"    : "dev",
         "phase"		 : "In Dev",
+        "title"      : "Query Module Sprint 5",
+        "output"	 : "Enabling lookup service through API and improving API documentation",
+        "date"       : "2013-12-05"
+    },
+    {
+        "section"    : "next",
+        "title"      : "Mapping Service Module Sprint 1",
+        "output"	 : "Building in simple view of existing maps",
+        "date"       : "2013-12-18"
+    },
+    {
+        "section"    : "completed",
         "title"      : "Query Module Sprint 4",
         "output"	 : "Finalising query module and clearing up deployment issues",
-        "date"       : "2013-11-09"
+        "date"       : "2013-11-20"
     },
     {
         "section"    : "completed",

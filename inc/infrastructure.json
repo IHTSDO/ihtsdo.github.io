@@ -6,12 +6,12 @@
     },
     {
         "section"    : "modules",
-        "title"      : "Workflow Module",
+        "title"      : "Workflow Module<br><span class='glyphicon glyphicon-road'></span>",
         "paragraph"  : "The workflow module is a generic implementation of a workflow, providing the ability for each user or organisation to customise to their own specific needs."
     },
     {
         "section"    : "modules",
-        "title"      : "User Administration Module",
+        "title"      : "User Administration Module<br><span class='glyphicon glyphicon-road'></span>",
         "paragraph"  : "This module allows role based access control around the framework. This foundation will enable a collaborative environment whilst providing the neccesary security controls."
     }
 ]

@@ -52,7 +52,7 @@
     {
         "section"    : "tech",
         "title"      : "Technology Choices",
-        "paragraph"  : "<ul><li>Java</li><li>Hosted solutions</li><li>MySQL / MariaDB</li><li>GoToMeeting</li><li>open Standards. open source wherever feasible</li><li>No tie to one operating system</li></ul>"
+        "paragraph"  : "<ul><li>Java</li><li>Hosted solutions</li><li>MySQL / MariaDB / MongoDB</li><li>GoToMeeting</li><li>open Standards. open source wherever feasible</li><li>No proprietary software</li></ul>"
     },
     {
         "section"    : "tech",

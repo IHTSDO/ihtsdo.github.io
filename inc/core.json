@@ -26,12 +26,12 @@
     },
     {
         "section"    : "modules",
-        "title"      : "Release Process Module",
+        "title"      : "Release Process Module<br><span class='glyphicon glyphicon-road'></span>",
         "paragraph"  : "This module covers the necessary processes and functionality to enable a interested stakeholder to release a version of the terminology, whether this be an international version or a national extension."
     },
     {
         "section"    : "modules",
-        "title"      : "Refset Services Module",
+        "title"      : "Refset Services Module<br><span class='glyphicon glyphicon-road'></span>",
         "paragraph"  : "Refset functionality is covered in two areas of the OTF. This services module covers the storage and back end processing of reference sets."
     }
 ]

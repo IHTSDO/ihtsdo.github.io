@@ -2,11 +2,11 @@
     {
         "section"    : "overview",
         "title"      : "",
-        "paragraph"  : "These modules represent a specific set of business use case groupins, which can be characterised as business domains."
+        "paragraph"  : "These modules represent a specific set of business use cases, which can be characterised as business domains."
     },
     {
         "section"    : "modules",
-        "title"      : "Mapping Module",
+        "title"      : "Mapping Module<br><span class='glyphicon glyphicon-road'></span>",
         "paragraph"  : "This modules provides the functionality to allow users to produce complex maps between SNOMED CT and other terminoplogies."
     },
     {
@@ -41,7 +41,7 @@
     },
     {
         "section"    : "modules",
-        "title"      : "Refset Management Module",
+        "title"      : "Refset Management Module<br><span class='glyphicon glyphicon-road'></span>",
         "paragraph"  : "Refset functionality is covered in two areas of the OTF. This services module covers the front end business requirements including management and editing of reference sets."
     }
 ]

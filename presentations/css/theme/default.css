@@ -82,9 +82,9 @@ body {
  *********************************************/
 .reveal section img {
   margin: 15px 0px;
-  background: rgba(255, 255, 255, 0.12);
+/*  background: rgba(255, 255, 255, 0.12);
   border: 4px solid #eeeeee;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); */
   -webkit-transition: all .2s linear;
   -moz-transition: all .2s linear;
   -ms-transition: all .2s linear;
@@ -92,9 +92,9 @@ body {
   transition: all .2s linear; }
 
 .reveal a:hover img {
-  background: rgba(255, 255, 255, 0.2);
+/*  background: rgba(255, 255, 255, 0.2);
   border-color: #13daec;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); */ }
 
 /*********************************************
  * NAVIGATION CONTROLS

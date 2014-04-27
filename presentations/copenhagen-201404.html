@@ -41,7 +41,11 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 
-				<section>
+				<section data-transition="zoom">
+					<img src="img/slide.png" alt="IHTSDO">
+				</section>
+
+				<section data-transition="linear">
 					<h1>IHTSDO Tooling</h1>
 					<img width="30%" height="30%" src="img/ihtsdo.png" alt="IHTSDO">
 					<br />
@@ -49,14 +53,14 @@
 					<br /><br>
 				</section>
 
-				<section data-background="#7CC8E8" data-background-transition="slide">
+				<section  data-transition="linear" data-background="#7CC8E8" data-background-transition="zoom">
 					<section ><font color="#000000">
 						<blockquote>“IHTSDO Tooling provides the services, tools and infrastructure necessary to support the authoring, management and publication of the IHTSDO products by the organization and its members”</blockquote>
 						</font>
 					</section>
 				</section>
 
-				<section  data-background-transition="slide">
+				<section  data-transition="linear" data-background-transition="slide">
 					<section>
 						<h2>Our Goals</h2>
 					</section>
@@ -99,7 +103,7 @@
 					</section>
 -->
 				</section>
-				<section data-background="#007777" data-background-transition="slide">
+				<section data-transition="linear" data-background="#007777" data-background-transition="slide">
 					<section>
 						<h2>IHTSDO Tooling Future State</h2>
 					</section>
@@ -109,7 +113,7 @@
 					</section>
 				</section>
 
-				<section>
+				<section data-transition="linear" >
 					<section>
 						<h2>IHTSDO IT Governance</h2>
 					</section>
@@ -130,7 +134,7 @@
 					</section>
 				</section>
 
-				<section data-background="#CCE090" data-background-transition="slide">
+				<section data-transition="linear" data-background="#CCE090" data-background-transition="slide">
 					<section>
 						<h2><font color="#000000">IHTSDO Workbench</font></h2>
 					</section>
@@ -185,7 +189,7 @@
 					</section>
 				</section>
 
-				<section  data-background="#0A6B0B" data-background-transition="slide"> 
+				<section data-transition="linear"  data-background="#0A6B0B" data-background-transition="slide"> 
 					<section>
 						<h2>Tooling Roadmamp</h2>
 						<h3>2014 and onwards</h3>
@@ -232,7 +236,7 @@
 					<section data-background="img/bus-phase2.png" data-background-size="800px" data-background-transition="fade"></section>
 				</section>
 
-				<section>
+				<section data-transition="linear" >
 					<section>
 						<h2>Phase 1 Report Card</h2>
 						<h4>Lessons learnt and things produced</h4>
@@ -282,7 +286,7 @@
 					</section>
 				</section>
 
-				<section data-background="#FFFFFF" data-background-transition="slide">
+				<section data-transition="linear" data-background="#FFFFFF" data-background-transition="slide">
 					<section>
 						<h2><font color="#000000">We are also redesigning and rebranding our online presence</font></h2>
 					</section>
@@ -306,7 +310,7 @@
 					<section data-background="img/target.jpg" data-background-transition="fade"></section>
 					<section data-background="img/phase2.jpg" data-background-transition="slide"></section>
 
-				<section>
+				<section data-transition="linear" >
 					<section>
 						<h1>Q & A</h1>
 						<p>
@@ -337,7 +341,7 @@
   			 	overview: true,
 
 				theme : Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition : Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+				//transition : Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
 				// Transition speed
 			    transitionSpeed: 'slow', // default/fast/slow
 

@@ -2,7 +2,7 @@ var xhr;
 if (window.XMLHttpRequest) xhr = new XMLHttpRequest();      // all browsers except IE
 else xhr = new ActiveXObject("Microsoft.XMLHTTP");      // for IE
  
-xhr.open('GET', 'inc/overview.json', false);
+xhr.open('GET', 'inc/content.json', false);
 xhr.onreadystatechange = function () {
     if (xhr.readyState===4 && xhr.status===200) {           
         var items = JSON.parse(xhr.responseText);

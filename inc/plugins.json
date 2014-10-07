@@ -11,6 +11,16 @@
     },
     {
         "section"    : "modules",
+        "title"      : "Licensing Module<br><span class='glyphicon glyphicon-road'></span>",
+        "paragraph"  : "This module provides a common set of functionality to enable licensing of SC and its derivative products."
+    },
+    {
+        "section"    : "modules",
+        "title"      : "Refset Management Module<br><span class='glyphicon glyphicon-road'></span>",
+        "paragraph"  : "Refset functionality is covered in two areas of the OTF. This services module covers the front end business requirements including management and editing of reference sets."
+    },
+    {
+        "section"    : "modules",
         "title"      : "Translation Module",
         "paragraph"  : "The Translation Module provides the functionality for users to include different languages in the terminology and specifically in a member's national extension."
     },
@@ -37,11 +47,6 @@
     {
         "section"    : "modules",
         "title"      : "Documentation Module",
-        "paragraph"  : "This module provides a common set of functionality to ensure that documentatio is common across all areas."
-    },
-    {
-        "section"    : "modules",
-        "title"      : "Refset Management Module<br><span class='glyphicon glyphicon-road'></span>",
-        "paragraph"  : "Refset functionality is covered in two areas of the OTF. This services module covers the front end business requirements including management and editing of reference sets."
+        "paragraph"  : "This module provides a common set of functionality to ensure that documentation is common across all areas."
     }
 ]

@@ -7,7 +7,7 @@
     {
         "section"    : "modules",
         "title"      : "Mapping Module<br><span class='glyphicon glyphicon-road'></span>",
-        "paragraph"  : "This modules provides the functionality to allow users to produce complex maps between SNOMED CT and other terminoplogies."
+        "paragraph"  : "This modules provides the functionality to allow users to produce complex maps between SNOMED CT and other terminologies."
     },
     {
         "section"    : "modules",

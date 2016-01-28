@@ -7,7 +7,7 @@
     {
         "section"    : "modules",
         "title"      : "Terminology Query Module",
-        "paragraph"  : "This module provides a programmtic interface which enables a consumer to interrogate the terminology using a standard query format, as well as a standard format for the response to the query. This module is exclusively used for querying against official releases of  the terminology.<p class=lead><a href=https://trello.com/b/iMVXM1UA>https://trello.com/b/iMVXM1UA</a></p>"
+        "paragraph"  : "This module provides a programmatic interface which enables a consumer to interrogate the terminology using a standard query format, as well as a standard format for the response to the query. This module is exclusively used for querying against official releases of  the terminology.<p class=lead><a href=https://trello.com/b/iMVXM1UA>https://trello.com/b/iMVXM1UA</a></p>"
     },
     {
         "section"    : "modules",

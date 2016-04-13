@@ -6,12 +6,12 @@
     },
     {
         "section"    : "modules",
-        "title"      : "Terminology Query Module",
-        "paragraph"  : "This module provides a programmatic interface which enables a consumer to interrogate the terminology using a standard query format, as well as a standard format for the response to the query. This module is exclusively used for querying against official releases of  the terminology.<p class=lead><a href=https://trello.com/b/iMVXM1UA>https://trello.com/b/iMVXM1UA</a></p>"
+        "title"      : "Terminology Query Module<br><span class='glyphicon glyphicon-ok-sign'></span>",
+        "paragraph"  : "This module provides a programmatic interface which enables a consumer to interrogate the terminology using a standard query format, as well as a standard format for the response to the query. This module is exclusively used for querying against official releases of  the terminology."
     },
     {
         "section"    : "modules",
-        "title"      : "Terminology Editing Module",
+        "title"      : "Terminology Editing Module<br><span class='glyphicon glyphicon-road'></span>",
         "paragraph"  : "When authoring functionality is required, this module would be used to store changes made during the editing process. This functionality has been abstracted from querying as modifying the terminology is commonly within the context of a different set of use cases."
     },
     {
@@ -21,7 +21,7 @@
     },
     {
         "section"    : "modules",
-        "title"      : "Identifier Management Module",
+        "title"      : "Identifier Management Modulebr><br><span class='glyphicon glyphicon-ok-sign'></span>",
         "paragraph"  : "This module returns an SCTID or an array of SCTIDs upon request bearing the required data."
     },
     {

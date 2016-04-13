@@ -6,12 +6,12 @@
     },
     {
         "section"    : "modules",
-        "title"      : "Mapping Module<br><span class='glyphicon glyphicon-ok-sign'><small> in production</small></span>",
+        "title"      : "Mapping Module<br><span class='glyphicon glyphicon-ok-sign'></span>",
         "paragraph"  : "This modules provides the functionality to allow users to produce complex maps between SNOMED CT and other terminologies."
     },
     {
         "section"    : "modules",
-        "title"      : "Licensing Module<br><span class='glyphicon glyphicon-ok-sign'><small> in production</small></span>",
+        "title"      : "Licensing Module<br><span class='glyphicon glyphicon-ok-sign'></span>",
         "paragraph"  : "This module provides a common set of functionality to enable licensing of SC and its derivative products."
     },
     {
@@ -26,7 +26,7 @@
     },
     {
         "section"    : "modules",
-        "title"      : "Terminology Authoring Module",
+        "title"      : "Terminology Authoring Module<br><span class='glyphicon glyphicon-road'></span>",
         "paragraph"  : "This is the module which will provide the interface which enables the terminology itself to be modified, updated and added to."
     },
     {
@@ -46,7 +46,7 @@
     },
     {
         "section"    : "modules",
-        "title"      : "Documentation Module",
+        "title"      : "Documentation Module<span class='glyphicon glyphicon-ok-sign'></span>",
         "paragraph"  : "This module provides a common set of functionality to ensure that documentation is common across all areas."
     }
 ]

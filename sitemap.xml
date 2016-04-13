@@ -1,28 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url><loc>http://ihtsdo.github.io/</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>1.00</priority></url>
-<url><loc>http://ihtsdo.github.io/overview.html</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>
-<url><loc>http://ihtsdo.github.io/principles.html</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>
-<url><loc>http://ihtsdo.github.io/core.html</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>
-<url><loc>http://ihtsdo.github.io/plugins.html</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>
-<url><loc>http://ihtsdo.github.io/infrastructure.html</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>
-<url><loc>http://ihtsdo.github.io/announcements.html</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>
-<url><loc>http://ihtsdo.github.io/status.html</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>
-<url><loc>http://ihtsdo.github.io/resources.html</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>
-<url><loc>http://ihtsdo.github.io/interfaces.html</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>
-<url><loc>http://ihtsdo.github.io/index.html</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.69</priority></url>
-<url><loc>http://ihtsdo.github.io/presentations/washington-dev-20131008.html</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.69</priority></url>
-<url><loc>http://ihtsdo.github.io/OTF-Query-Services/</loc><lastmod>2013-10-06T10:36:59+00:00</lastmod><changefreq>daily</changefreq><priority>0.69</priority></url>
-<url><loc>http://ihtsdo.github.io/presentations/OTF-Generic-201310.html</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.69</priority></url>
-<url><loc>http://ihtsdo.github.io/presentations/ihtsdotooling-20130916.html</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.69</priority></url>
-<url><loc>http://ihtsdo.github.io/presentations/otfdemo1-20130910.html</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.69</priority></url>
-<url><loc>http://ihtsdo.github.io/presentations/otf-20130813-dev.html</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.69</priority></url>
-<url><loc>http://ihtsdo.github.io/principles</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.56</priority></url>
-<url><loc>http://ihtsdo.github.io/interfaces-conf.html</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.56</priority></url>
-<url><loc>http://ihtsdo.github.io/presentations/OTF-Generic-201310.html?theme=sky</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.56</priority></url>
-<url><loc>http://ihtsdo.github.io/presentations/OTF-Generic-201310.html?theme=night</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.56</priority></url>
-<url><loc>http://ihtsdo.github.io/presentations/OTF-Generic-201310.html?theme=simple</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.56</priority></url>
-<url><loc>http://ihtsdo.github.io/presentations/OTF-Generic-201310.html?</loc><lastmod>2013-10-14T07:07:21+00:00</lastmod><changefreq>daily</changefreq><priority>0.56</priority></url>
-</urlset>
- 
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
+<url>
+  <loc>http://ihtsdo.github.io/</loc>
+  <lastmod>2016-04-13T08:40:13+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://ihtsdo.github.io/overview.html</loc>
+  <lastmod>2016-04-13T08:40:13+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://ihtsdo.github.io/principles.html</loc>
+  <lastmod>2016-04-13T08:40:13+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://ihtsdo.github.io/core.html</loc>
+  <lastmod>2016-04-13T08:40:13+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://ihtsdo.github.io/plugins.html</loc>
+  <lastmod>2016-04-13T08:40:13+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://ihtsdo.github.io/infrastructure.html</loc>
+  <lastmod>2016-04-13T08:40:13+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://ihtsdo.github.io/index.html</loc>
+  <lastmod>2016-04-13T08:40:13+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+</urlset>

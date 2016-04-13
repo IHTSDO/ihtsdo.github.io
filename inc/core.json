@@ -21,7 +21,7 @@
     },
     {
         "section"    : "modules",
-        "title"      : "Identifier Management Modulebr><br><span class='glyphicon glyphicon-ok-sign'></span>",
+        "title"      : "Identifier Management Module<br><span class='glyphicon glyphicon-ok-sign'></span>",
         "paragraph"  : "This module returns an SCTID or an array of SCTIDs upon request bearing the required data."
     },
     {

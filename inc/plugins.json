@@ -46,7 +46,7 @@
     },
     {
         "section"    : "modules",
-        "title"      : "Documentation Module<span class='glyphicon glyphicon-ok-sign'></span>",
+        "title"      : "Documentation Module<br><span class='glyphicon glyphicon-ok-sign'></span>",
         "paragraph"  : "This module provides a common set of functionality to ensure that documentation is common across all areas."
     }
 ]

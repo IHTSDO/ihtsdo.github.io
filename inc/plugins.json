@@ -16,27 +16,27 @@
     },
     {
         "section"    : "modules",
-        "title"      : "Refset Management Module<br><span class='glyphicon glyphicon-road'></span>",
+        "title"      : "Refset Management Module<br><span class='glyphicon glyphicon-ok-sign'></span>",
         "paragraph"  : "Refset functionality is covered in two areas of the OTF. This services module covers the front end business requirements including management and editing of reference sets."
     },
     {
         "section"    : "modules",
-        "title"      : "Translation Module<br><span class='glyphicon glyphicon-road'></span>",
+        "title"      : "Translation Module<br><span class='glyphicon glyphicon-ok-sign'></span>",
         "paragraph"  : "The Translation Module provides the functionality for users to include different languages in the terminology and specifically in a member's national extension."
     },
     {
         "section"    : "modules",
-        "title"      : "Terminology Authoring Module<br><span class='glyphicon glyphicon-road'></span>",
+        "title"      : "Terminology Authoring Module<br><span class='glyphicon glyphicon-ok-sign'></span>",
         "paragraph"  : "This is the module which will provide the interface which enables the terminology itself to be modified, updated and added to."
     },
     {
         "section"    : "modules",
         "title"      : "Member Exchange Module",
-        "paragraph"  : "This will provide an area where IHTSDO Members & Affiliates can share and download different IHTSDO artefacts including reference sets and ..."
+        "paragraph"  : "This will provide an area where SNOMED International Members & Affiliates can share and download different SNOMED International artefacts including reference sets and ..."
     },
     {
         "section"    : "modules",
-        "title"      : "Content Request Module<br><span class='glyphicon glyphicon-road'></span>",
+        "title"      : "Content Request Module<br><span class='glyphicon glyphicon-ok-sign'></span>",
         "paragraph"  : "This module provices functionality for external stakeholders to submit content requests for the main SNOMED CT."
     },
     {

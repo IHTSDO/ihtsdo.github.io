@@ -2,12 +2,12 @@
     {
         "section"    : "overview",
         "title"      : "",
-        "paragraph"  : "Whilst the OTF provides a framework for the IHTSDO, Members & Afiliates to build tools, there are also a set of specific operational tools that should be used within the IHTSDO for day to day operations, over any other tools"
-    },    
+        "paragraph"  : "Whilst the OTF provides a framework for SNOMED International, Members & Afiliates to build tools, there are also a set of specific operational tools that should be used within SNOMED International for day to day operations, over any other tools"
+    },
     {
         "section"    : "operational",
         "title"      : "Google Apps Domain",
-        "paragraph"  : "The IHTSDO uses the Google Apps domain to provide the following features:<ul><li><b>GMail</b></li><li><b>Calendar</b></li><li><b>Google Drive</b> - 30Gb of online storage each plus collaborative document creation and editing, as well as forms</li><li><b>Google Hangout</b> - Internal chat and video conferencing</li><li>and more...</li><ul>"
+        "paragraph"  : "SNOMED International uses the Google Apps domain to provide the following features:<ul><li><b>GMail</b></li><li><b>Calendar</b></li><li><b>Google Drive</b> - 30Gb of online storage each plus collaborative document creation and editing, as well as forms</li><li><b>Google Hangout</b> - Internal chat and video conferencing</li><li>and more...</li><ul>"
     },
     {
         "section"    : "operational",

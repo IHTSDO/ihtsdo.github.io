@@ -19,14 +19,13 @@
 
 
 /* THANKS */
-
-		ihtsdo.org
+		snomed.org
     bootstrap
-		the wider IHTSDO Tooling developer community
+		the wider SNOMED International Tooling developer community
 
 /* SITE */
-		Domain name: ihtsdotools.org
-		Last update: 2016-04-13
+		Domain name: snomed.org
+		Last update: 2020-03-30
 		Language: English
 		Standards: HTML5 CSS3
-		IDE: Atom
+		IDE: Atom, Visual Source Code

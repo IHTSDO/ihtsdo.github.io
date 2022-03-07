@@ -1,0 +1,108 @@
+// COLOURS ///////////////////////////////////////////////////////////////
+$white: #FFFFFF;
+$gallery-white: #FAFAFA;
+$alto-white: #E0E0E0;
+$ghost-grey: #C8CFD6;
+$slate-grey: #708090;
+$river-bed: #434A55;
+$bootstrap-dark: #56606A;
+$bootstrap-black: #343A40;
+$black: #000000;
+$wisteria: #A060AE;
+$mandy: #EB4C59;
+$fruit-salad: #4EA24E;
+$anakiwa: #C3E7FE;
+$cerulean: #49A8DB;
+$blumine: #124F6B;
+$sea-buckthorn: #F8A73D;
+$candlelight: #FBDB13;
+
+// BACKGROUNDS ///////////////////////////////////////////////////////////
+.bg-white {
+    background-color: $white;
+}
+
+.bg-gallery-white {
+    background-color: $gallery-white;
+}
+
+.bg-alto-white {
+    background-color: $alto-white;
+}
+
+.bg-ghost-grey {
+    background-color: $ghost-grey;
+}
+
+.bg-slate-grey {
+    background-color: $slate-grey;
+}
+
+.bg-river-bed {
+    background-color: $river-bed;
+}
+
+.bg-bootstrap-dark {
+    background-color: $bootstrap-dark;
+}
+
+.bg-bootstrap-black {
+    background-color: $bootstrap-black;
+}
+
+.bg-black {
+    background-color: $black;
+}
+
+.bg-wisteria {
+    background-color: $wisteria;
+}
+
+.bg-mandy {
+    background-color: $mandy;
+}
+
+.bg-fruit-salad {
+    background-color: $fruit-salad;
+}
+
+.bg-anakiwa {
+    background-color: $anakiwa;
+}
+
+.bg-cerulean {
+    background-color: $cerulean;
+}
+
+.bg-blumine {
+    background-color: $blumine;
+}
+
+.bg-sea-buckthorn {
+    background-color: $sea-buckthorn;
+}
+
+.bg-candlelight {
+    background-color: $candlelight;
+}
+
+// BACKGROUNDS - HOVER ///////////////////////////////////////////////////
+.bg-bootstrap-dark-hover:hover {
+    background-color: darken($bootstrap-dark, 10%);
+}
+
+.bg-mandy-hover:hover {
+    background-color: darken($mandy, 10%);
+}
+
+.bg-fruit-salad-hover:hover {
+    background-color: darken($fruit-salad, 10%);
+}
+
+.bg-cerulean-hover:hover {
+    background-color: darken($cerulean, 10%);
+}
+
+.bg-sea-buckthorn-hover:hover {
+    background-color: darken($sea-buckthorn, 10%);
+}

@@ -1,0 +1,191 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~src/material-theme.scss';
+@import '~src/variables.scss';
+@import 'toastr';
+
+html {
+    font-size: 62.5%;
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Poppins', 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: $black;
+    letter-spacing: 0.5px;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/Poppins-Thin.ttf');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/Poppins-ExtraLight.ttf');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/Poppins-Light.ttf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/Poppins-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/Poppins-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/Poppins-SemiBold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/Poppins-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/Poppins-ExtraBold.ttf');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/Poppins-Black.ttf');
+    font-weight: 900;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 3.0rem;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: 2.4rem;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+h4 {
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+h5 {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+h6 {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+p {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: $river-bed;
+}
+
+a {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: $cerulean;
+
+    &:hover {
+        color: darken($cerulean, 20%);
+    }
+}
+
+b {
+    font-weight: 600;
+}
+
+button {
+    &.btn {
+        font-size: 1.4rem;
+        font-weight: 300;
+        letter-spacing: 1.5px;
+        border: none;
+        color: $white;
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+    &:focus, &:active {
+        outline: none !important;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+input, textarea {
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    resize: none;
+
+    &:focus, &:active {
+        outline: none !important;
+    }
+}
+
+select {
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+
+    &:focus, &:active {
+        outline: none !important;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.form-control {
+    font-size: 1.4rem;
+}
+
+.footer-margin {
+    margin-bottom: 4rem;
+}
+
+ngb-typeahead-window.dropdown-menu button {
+    max-width: 30vw;
+    font-size: 1.2rem;
+    overflow-y: hidden;
+
+    button.dropdown-item {
+        font-weight: 300;
+    }
+}

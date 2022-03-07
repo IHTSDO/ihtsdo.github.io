@@ -1,0 +1,341 @@
+<div class="main-view">
+    <div class="container-fluid bg-gallery-white">
+        <div id="Introduction" class="container">
+            <div class="row p-5">
+                <h1>SNOMED INTERNATIONAL: GUI GUIDELINES</h1>
+                <p>This is a living document of the Snomed International GUI guidelines, with examples for how certain web elements should look or operate when producing webapps or similar programs.</p>
+                <p>All newly written applications for Snomed International should follow the same design theme provided here, most importantly with identical sized headers and footers, to allow seamless transitions between different applications.</p>
+                <p>Did you know, you can save yourself time by forking or copying this repository, and you will have the headers, footers, modals, and much more already waiting for you to use!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="Colours" class="container">
+        <div class="row p-5">
+            <h1>COLOURS</h1>
+            <p>These are the majority of colours used in the Snomed International applications. Each of these colours acts as a base which can be darkened or lightened if necessary using darken() or lighten() sass functions.</p>
+            <p>For example, a delete button should have a background in <b>MANDY</b>, which can be darkened by 10% when hovering over it.</p>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="p-5 m-3 rounded bg-white">
+                        <h3 class="mb-0">WHITE</h3>
+                        <h3 class="mb-0">#FFFFFF</h3>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="p-5 m-3 rounded bg-gallery-white">
+                        <h3 class="mb-0">GALLERY WHITE</h3>
+                        <h3 class="mb-0">#FAFAFA</h3>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="p-5 m-3 rounded bg-alto-white">
+                        <h3 class="mb-0">ALTO WHITE</h3>
+                        <h3 class="mb-0">#E0E0E0</h3>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="p-5 m-3 rounded bg-ghost-grey">
+                        <h3 class="mb-0">GHOST GREY</h3>
+                        <h3 class="mb-0">#C8CFD6</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm">
+                    <div class="p-5 m-3 rounded bg-slate-grey">
+                        <h3 class="mb-0 text-white">SLATE GREY</h3>
+                        <h3 class="mb-0 text-white">#708090</h3>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="p-5 m-3 rounded bg-river-bed">
+                        <h3 class="mb-0 text-white">RIVER BED</h3>
+                        <h3 class="mb-0 text-white">#434A55</h3>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="p-5 m-3 rounded bg-bootstrap-dark">
+                        <h3 class="mb-0 text-white">BOOTSTRAP DARK</h3>
+                        <h3 class="mb-0 text-white">#56606A</h3>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="p-5 m-3 rounded bg-bootstrap-black">
+                        <h3 class="mb-0 text-white">BOOTSTRAP BLACK</h3>
+                        <h3 class="mb-0 text-white">#343A40</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm">
+                    <div class="p-5 m-3 rounded bg-black">
+                        <h3 class="mb-0 text-white">BLACK</h3>
+                        <h3 class="mb-0 text-white">#000000</h3>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="p-5 m-3 rounded bg-wisteria">
+                        <h3 class="mb-0 text-white">WISTERIA</h3>
+                        <h3 class="mb-0 text-white">#A060AE</h3>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="p-5 m-3 rounded bg-mandy">
+                        <h3 class="mb-0 text-white">MANDY</h3>
+                        <h3 class="mb-0 text-white">#EB4C59</h3>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="p-5 m-3 rounded bg-fruit-salad">
+                        <h3 class="mb-0 text-white">FRUIT SALAD</h3>
+                        <h3 class="mb-0 text-white">#4EA24E</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm">
+                    <div class="p-5 m-3 rounded bg-anakiwa">
+                        <h3 class="mb-0">ANAKIWA</h3>
+                        <h3 class="mb-0">#C3E7FE</h3>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="p-5 m-3 rounded bg-cerulean">
+                        <h3 class="mb-0 text-white">CERULEAN</h3>
+                        <h3 class="mb-0 text-white">#49A8DB</h3>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="p-5 m-3 rounded bg-blumine">
+                        <h3 class="mb-0 text-white">BLUMINE</h3>
+                        <h3 class="mb-0 text-white">#124F6B</h3>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="p-5 m-3 rounded bg-sea-buckthorn">
+                        <h3 class="mb-0 text-white">SEA BUCKTHORN</h3>
+                        <h3 class="mb-0 text-white">#F8A73D</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm">
+                    <div class="p-5 m-3 rounded bg-candlelight">
+                        <h3 class="mb-0">CANDLELIGHT</h3>
+                        <h3 class="mb-0">#FBDB13</h3>
+                    </div>
+                </div>
+                <div class="col-sm"></div>
+                <div class="col-sm"></div>
+                <div class="col-sm"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-gallery-white">
+        <div id="Typeface" class="container">
+            <div class="row p-5">
+                <h1>TYPEFACE</h1>
+                <p class="mb-3">All typography in snomed applications is measured in the unit of <b>rem</b>. This stands for root em, and is way of providing uniform font sizing in web programming. The measurement of rem requires a base font size, of which ours is <b>12px</b>.</p>
+                <p class="mb-3">This means a font of <b>1rem</b> is equal to <b>12px</b>, or a font of <b>1.5rem</b> is equal to <b>18px</b></p>
+                <h1 class="mb-3">HEADER #1 - 3rem</h1>
+                <h2 class="mb-3">HEADER #2 - 2.4rem</h2>
+                <h3 class="mb-3">HEADER #3 - 1.8rem</h3>
+                <h4 class="mb-3">HEADER #4 - 1.6rem</h4>
+                <h5 class="mb-3">HEADER #5 - 1.4rem</h5>
+                <h6 class="mb-3">HEADER #6 - 1.2rem</h6>
+                <p class="mb-3">Paragraph of text - 1.4rem</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="Forms" class="container">
+        <div class="row p-5">
+            <h1>FORM ELEMENTS</h1>
+            <p class="mb-5">Webapps often have a lot of form inputs, either as part of a singular form, or sometimes aggregated into a much larger application. This is considered guidance on how these buttons should typically look. These are heavily based on bootstrap.</p>
+            <div class="row mb-5">
+                <div class="col">
+                    <h2>BUTTONS</h2>
+                    <p>Colours represent expected actions. Green is positive, red is negative, blue is informative</p>
+                    <div class="m-3">
+                        <button class="btn me-3 mb-3 bg-fruit-salad bg-fruit-salad-hover">POSITIVE</button>
+                        <button class="btn me-3 mb-3 bg-sea-buckthorn bg-sea-buckthorn-hover">WARNING</button>
+                        <button class="btn me-3 mb-3 bg-mandy bg-mandy-hover">NEGATIVE</button>
+                        <button class="btn me-3 mb-3 bg-cerulean bg-cerulean-hover">INFORMATIVE</button>
+                        <button class="btn me-3 mb-3 bg-bootstrap-dark bg-bootstrap-dark-hover">ACCEPTANCE</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <h2>TEXT</h2>
+                    <p>These are straight up bootstrap, don't break what isn't broken. 1.4rem in size.</p>
+                    <div class="m-3">
+                        <input class="form-control" placeholder="Try typing here...">
+                    </div>
+                </div>
+                <div class="col">
+                    <h2>SELECT</h2>
+                    <p>Not a fan of the keyboard? Don't worry, select has your back.</p>
+                    <div class="m-3">
+                        <select class="form-control form-select">
+                            <option>Body Structure</option>
+                            <option>Clinical Finding</option>
+                            <option>Observable Entity</option>
+                            <option>Organism</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col">
+                    <h2>CHECKS</h2>
+                    <p>Can choose multiple of these.</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Default checkbox
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Checked checkbox
+                        </label>
+                    </div>
+                </div>
+                <div class="col">
+                    <h2>RADIOS</h2>
+                    <p>But only one of these.</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Default radio
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Default checked radio
+                        </label>
+                    </div>
+                </div>
+                <div class="col">
+                    <h2>SWITCHES</h2>
+                    <p>Which side are you on?</p>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Default switch</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h2>TYPEAHEAD</h2>
+                    <div class="m-3">
+                        <input class="form-control mb-3" type="text" placeholder="Search..." [(ngModel)]="basicTypeahead" [ngbTypeahead]="search" placement="bottom"/>
+                    </div>
+                </div>
+                <div class="col">
+                    <h2>RESULT</h2>
+                    <div class="m-3">
+                        <h3>{{basicTypeahead}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-gallery-white">
+        <div id="Modals" class="container">
+            <div class="row p-5">
+                <h1>MODALS</h1>
+                <p>Our own modal service exists, in which modals can be opened and closed via uniquely named ids. In this example I have made one called example-modal.</p>
+                <p>Extra attention should be paid to preserving the look of the header and the footer in the modal, in order to maintain consistency across our applications.</p>
+                <div class="col-sm">
+                    <button class="btn bg-cerulean bg-cerulean-hover" (click)="openModal('example-modal')">OPEN MODAL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Toastr" class="container">
+        <div class="row p-5">
+            <h1>TOASTR</h1>
+            <p>Toastr is an included library that can be used to provide feedback to the users for a variety of reasons, a good example of which being a successful (or unsuccessful) http response.</p>
+            <p>Much like buttons, these too come with some associated types, green for success, red for failure/error.</p>
+            <div class="col-sm">
+                <button class="btn bg-fruit-salad bg-fruit-salad-hover" (click)="toastrSuccess()">TOASTR SUCCESS</button>
+            </div>
+            <div class="col-sm">
+                <button class="btn bg-sea-buckthorn bg-sea-buckthorn-hover" (click)="toastrWarning()">TOASTR WARNING</button>
+            </div>
+            <div class="col-sm">
+                <button class="btn bg-mandy bg-mandy-hover" (click)="toastrError()">TOASTR ERROR</button>
+            </div>
+            <div class="col-sm">
+                <button class="btn bg-cerulean bg-cerulean-hover" (click)="toastrInfo()">TOASTR INFO</button>
+            </div>
+            <div class="col-sm">
+                <button class="btn bg-bootstrap-dark bg-bootstrap-dark-hover" (click)="toastrShow()">TOASTR SHOW</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-gallery-white">
+        <div id="Libraries" class="container">
+            <div class="row p-5">
+                <h1>LIBRARIES</h1>
+                <div class="col">
+                    <p>This example, along with all the most recent webapps developed for Snomed International have been developed in Angular v12 via TypeScript, and are regularly upgraded to the latest versions.</p>
+                    <p>There are a common set of libaries included within all our webapps that include, but is not limited to:</p>
+                </div>
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item">Font Awesome</li>
+                        <li class="list-group-item">Bootstrap</li>
+                        <li class="list-group-item">Toastr</li>
+                        <li class="list-group-item">RxJs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Learning" class="container mb-5">
+        <div class="row p-5">
+            <h1>LEARNING</h1>
+            <div class="col">
+                <p>There are some great resources to learn Angular across the web, but some of the key ones that have stood out to me are:</p>
+                <p><a href="https://www.udemy.com/course/angular-crash-course/" target="_blank">Angular Crash Course for Busy Developers</a> by <b>Mosh Hamedani</b></p>
+                <p><a href="https://www.udemy.com/course/the-complete-guide-to-angular-2/" target="_blank">Angular - The Complete Guide</a> by <b>Maximilian Schwarzmüller</b></p>
+                <p><a href="https://angular.io/docs" target="_blank">Official Angular documentation</a></p>
+            </div>
+            <div class="col">
+                <p>Bootstrap also plays a significant role in development, with powerful ways of standardizing content via its grid and utility features.</p>
+                <p><a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/" target="_blank">Official Bootstrap documentation</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-modal id="example-modal" class="modal">
+    <div header><h3 class="mb-0">Example Modal<span class="px-2"></span></h3></div>
+    <div body>
+        <p>You can press some buttons in the footer if you like.</p>
+        <p>For example you could press SAVE or DELETE, but they don't really do anything for this example.</p>
+    </div>
+    <div footer>
+        <button type="button" class="btn" (click)="closeModal('example-modal')">CANCEL</button>
+        <button type="button" class="btn reject ms-3" (click)="delete(); closeModal('example-modal')">DELETE</button>
+        <button type="button" class="btn accept ms-3" (click)="save(); closeModal('example-modal')">SAVE</button>
+    </div>
+</app-modal>
+

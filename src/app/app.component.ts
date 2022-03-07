@@ -40,17 +40,17 @@ export class AppComponent implements OnInit {
         this.titleService.setTitle('SNOMED CT Angular Template');
         this.environment = this.envService.env;
 
-        this.authoringService.getVersions().subscribe(versions => {
-            this.versions = versions;
-        });
+        // this.authoringService.getVersions().subscribe(versions => {
+        //     this.versions = versions;
+        // });
 
-        this.authoringService.getUIConfiguration().subscribe(config => {
-            this.authoringService.uiConfiguration = config;
-
-            this.conceptService.httpGetExampleConcepts('138875005').subscribe(data => {
-                this.conceptService.setConcepts(data);
-            });
-        });
+        // this.authoringService.getUIConfiguration().subscribe(config => {
+        //     this.authoringService.uiConfiguration = config;
+        //
+        //     this.conceptService.httpGetExampleConcepts('138875005').subscribe(data => {
+        //         this.conceptService.setConcepts(data);
+        //     });
+        // });
 
         this.branchingService.setBranchPath('MAIN');
         this.assignFavicon();

@@ -45,20 +45,20 @@ export class SnomedNavbarComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.authenticationService.setUser();
+        // this.authenticationService.setUser();
         this.path = this.location.path();
 
-        this.pathingService.httpGetBranches().subscribe(branches => {
-            this.pathingService.setBranches(branches);
-            if (!this.path) {
-                this.pathingService.setActiveBranch(branches[0]);
-            }
-        });
-
-        this.pathingService.httpGetProjects().subscribe(projects => {
-            this.pathingService.setProjects(projects);
-            this.setPath(this.path);
-        });
+        // this.pathingService.httpGetBranches().subscribe(branches => {
+        //     this.pathingService.setBranches(branches);
+        //     if (!this.path) {
+        //         this.pathingService.setActiveBranch(branches[0]);
+        //     }
+        // });
+        //
+        // this.pathingService.httpGetProjects().subscribe(projects => {
+        //     this.pathingService.setProjects(projects);
+        //     this.setPath(this.path);
+        // });
     }
 
 

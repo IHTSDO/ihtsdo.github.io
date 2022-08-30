@@ -13,16 +13,13 @@ import {TerminologyServerService} from '../../services/terminologyServer/termino
 export class MainViewComponent implements OnInit {
 
     editorConfig = {
+        base_url: '/tinymce',
+        suffix: '.min',
         height: 500,
         menubar: false,
-        plugins: [
-            'advlist autolink lists link image charmap print preview anchor',
-            'searchreplace visualblocks code fullscreen',
-            'insertdatetime media table paste code help wordcount'
-        ],
-        toolbar: [
-            'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help'
-        ]
+        statusbar: false,
+        plugins: 'link table',
+        toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link | table'
     };
 
     toastrConfig = {

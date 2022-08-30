@@ -34,7 +34,8 @@
                             "src/favicon_red.ico",
                             "src/favicon_green.ico",
                             "src/favicon_yellow.ico",
-                            "src/assets"
+                            "src/assets",
+                            { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" }
                         ],
                         "styles": [
                             "./node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -44,7 +45,8 @@
                         "scripts": [
                             "./node_modules/jquery/dist/jquery.min.js",
                             "./node_modules/@popperjs/core/dist/umd/popper.min.js",
-                            "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+                            "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+                            "node_modules/tinymce/tinymce.min.js"
                         ]
                     },
                     "configurations": {

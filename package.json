@@ -33,6 +33,7 @@
         "@fortawesome/fontawesome-free": "^5.13.0",
         "@ng-bootstrap/ng-bootstrap": "^10.0.0",
         "@popperjs/core": "^2.10.1",
+        "@tinymce/tinymce-angular": "^7.0.0",
         "@types/jquery": "^3.5.1",
         "ajv": "^6.12.2",
         "bootstrap": "^5.1.1",
@@ -42,6 +43,7 @@
         "ngx-toastr": "^13.2.0",
         "rxjs": "^6.6.3",
         "snomed-ecl-builder": "^1.0.0",
+        "tinymce": "^6.1.2",
         "tslib": "^2.0.0",
         "zone.js": "~0.11.4"
     },

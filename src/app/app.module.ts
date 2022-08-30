@@ -32,7 +32,7 @@ import {LeftSidebarComponent} from './components/left-sidebar/left-sidebar.compo
 import {TextFilterPipe} from './pipes/text-filter/text-filter.pipe';
 import {ConceptService} from './services/concept/concept.service';
 import { MainViewComponent } from './components/main-view/main-view.component';
-// import {EditorModule} from "@tinymce/tinymce-angular";
+import {EditorModule, TINYMCE_SCRIPT_SRC} from "@tinymce/tinymce-angular";
 
 // SERVICE IMPORTS
 
@@ -57,8 +57,8 @@ import { MainViewComponent } from './components/main-view/main-view.component';
         BrowserAnimationsModule,
         NgbTypeaheadModule,
         AppRoutingModule,
-        ToastrModule.forRoot()
-        // EditorModule
+        ToastrModule.forRoot(),
+        EditorModule
     ],
     providers: [
         AuthenticationService,
@@ -72,6 +72,10 @@ import { MainViewComponent } from './components/main-view/main-view.component';
             provide: HTTP_INTERCEPTORS,
             useClass: HeaderInterceptor,
             multi: true
+        },
+        {
+            provide: TINYMCE_SCRIPT_SRC,
+            useValue: 'tinymce/tinymce.min.js'
         }
     ],
     bootstrap: [AppComponent]

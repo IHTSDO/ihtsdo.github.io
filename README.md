@@ -1,48 +1,27 @@
 # Angular Template
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
+The Angular Template is an application template for SNOMED CT Angular applications, allowing for rapid starts to new programs. It currently contains a basic UI guide in addition to acting as a template.
+
+## Framework
+
+This project runs on the [Angular](https://github.com/angular) framework. Current version is v14.1.3.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Additional Configuration
-
-In order to obtain api-endpoint information within the local environment and avoid CORS errors when accessing SNOWSTORM and IMS endpoints a configuration similar to the following (very basic) should be used - 4200 is the default serve port for Angular CLI:
-
-```
-server {
-        listen      8090;
-        server_name localhost.ihtsdotools.org;
-        location / {
-            proxy_pass http://127.0.0.1:4200;
-        }
-        location /browser {
-           proxy_pass https://dev-browser.ihtsdotools.org/snowstorm/snomed-ct;
-        }
-        location /snowstorm {
-           proxy_pass https://dev-browser.ihtsdotools.org/snowstorm;
-        }
-        location /auth {
-            proxy_pass https://dev-ims.ihtsdotools.org/api/account;
-            proxy_set_header Accept "application/json";
-        }
-    }
-```
-Using local.ihtsdotools validates the IMS SSO cookie against the subdomain.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via Jest.
+## Documentation
 
-## Further help
+Documentation for usage of the reporting platform can be found [here](https://confluence.ihtsdotools.org/display/AP6UG/Reporting+Platform).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## License
+
+Apache 2.0
+
+See the included LICENSE file for details.

@@ -16,10 +16,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ---
 
-## Documentation
-
-Documentation for usage of the reporting platform can be found [here](https://confluence.ihtsdotools.org/display/AP6UG/Reporting+Platform).
-
 ## License
 
 Apache 2.0

@@ -1,4 +1,4 @@
-# Angular Template
+# Angular Template by SNOMED International
 
 ![Last Commit](https://img.shields.io/github/last-commit/ihtsdo/ihtsdo.github.io)
 ![Issues](https://img.shields.io/github/issues/ihtsdo/ihtsdo.github.io)

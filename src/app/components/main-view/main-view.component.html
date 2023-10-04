@@ -240,20 +240,19 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <h2>TYPEAHEAD</h2>
-                    <div class="m-3">
-                        <input class="form-control mb-3" type="text" placeholder="Search..." [(ngModel)]="basicTypeahead" [ngbTypeahead]="search" placement="bottom"/>
-                    </div>
-                </div>
-                <div class="col">
-                    <h2>RESULT</h2>
-                    <div class="m-3">
-                        <h3>{{basicTypeahead}}</h3>
-                    </div>
-                </div>
-            </div>
+<!--            <div class="row">-->
+<!--                <div class="col">-->
+<!--                    <h2>TYPEAHEAD</h2>-->
+<!--                    <div class="m-3">-->
+<!--                        <input class="form-control mb-3" type="text" placeholder="Search..." aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto"/>-->
+<!--                        <mat-autocomplete #auto="matAutocomplete">-->
+<!--                            <mat-option *ngFor="let option of filteredOptions" [value]="option.name">-->
+<!--                                {{option.name}}-->
+<!--                            </mat-option>-->
+<!--                        </mat-autocomplete>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
     </div>
 

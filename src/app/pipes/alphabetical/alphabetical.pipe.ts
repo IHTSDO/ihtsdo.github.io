@@ -18,6 +18,8 @@ export class AlphabeticalPipe implements PipeTransform {
             if (a[key] < b[key]) {
                 return -1;
             }
+
+            return null;
         });
 
         return items;

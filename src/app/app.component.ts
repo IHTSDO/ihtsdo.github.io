@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import 'jquery';
+import {Component, Inject, OnInit} from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { AuthoringService } from './services/authoring/authoring.service';
 import { BranchingService } from './services/branching/branching.service';
@@ -9,6 +8,8 @@ import {StatusPageService} from './services/statusPage/status-page.service';
 import {TerminologyServerService} from './services/terminologyServer/terminology-server.service';
 import {ModalService} from './services/modal/modal.service';
 import {ConceptService} from './services/concept/concept.service';
+import {DOCUMENT} from "@angular/common";
+
 
 @Component({
     selector: 'app-root',
@@ -33,7 +34,8 @@ export class AppComponent implements OnInit {
                 private statusService: StatusPageService,
                 private terminologyService: TerminologyServerService,
                 private modalService: ModalService,
-                private conceptService: ConceptService) {
+                private conceptService: ConceptService,
+                @Inject(DOCUMENT) private document: Document) {
     }
 
     ngOnInit() {
@@ -128,23 +130,21 @@ export class AppComponent implements OnInit {
 
 
     assignFavicon() {
-        const favicon = $('#favicon');
-
         switch (this.environment) {
             case 'local':
-                favicon.attr('href', 'favicon_grey.ico');
+                this.document.getElementById('favicon')?.setAttribute('href', 'favicon_grey.ico');
                 break;
             case 'dev':
-                favicon.attr('href', 'favicon_red.ico');
+                this.document.getElementById('favicon')?.setAttribute('href', 'favicon_red.ico');
                 break;
             case 'uat':
-                favicon.attr('href', 'favicon_green.ico');
+                this.document.getElementById('favicon')?.setAttribute('href', 'favicon_green.ico');
                 break;
             case 'training':
-                favicon.attr('href', 'favicon_yellow.ico');
+                this.document.getElementById('favicon')?.setAttribute('href', 'favicon_yellow.ico');
                 break;
             default:
-                favicon.attr('href', 'favicon.ico');
+                this.document.getElementById('favicon')?.setAttribute('href', 'favicon.ico');
                 break;
         }
     }

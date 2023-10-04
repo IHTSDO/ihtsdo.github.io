@@ -41,6 +41,19 @@ export class TerminologyServerService {
             }));
     }
 
+    getAutocomplete(term) {
+        const params = {
+            termFilter: term,
+            limit: 20,
+            expand: 'fsn()',
+            activeFilter: true,
+            termActive: true
+        };
+        return this.http.post('https://browser.ihtsdotools.org/snowstorm/snomed-ct/browser/MAIN/concepts/search', params).pipe(map(data => {
+            return data['items'];
+        }));
+    }
+
     getConcept(id): Observable<object> {
         return this.http.get<object>(this.authoringService.uiConfiguration.endpoints.terminologyServerEndpoint + this.branchPath
             + '/concepts/' + id);

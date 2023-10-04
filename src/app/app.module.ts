@@ -2,12 +2,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HeaderInterceptor } from './interceptors/header.interceptor';
-import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 
 // COMPONENT IMPORTS
 import { SnomedNavbarComponent } from './components/snomed-navbar/snomed-navbar.component';
@@ -32,7 +31,8 @@ import {LeftSidebarComponent} from './components/left-sidebar/left-sidebar.compo
 import {TextFilterPipe} from './pipes/text-filter/text-filter.pipe';
 import {ConceptService} from './services/concept/concept.service';
 import { MainViewComponent } from './components/main-view/main-view.component';
-import {EditorModule, TINYMCE_SCRIPT_SRC} from "@tinymce/tinymce-angular";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {MatInputModule} from "@angular/material/input";
 
 // SERVICE IMPORTS
 
@@ -55,10 +55,11 @@ import {EditorModule, TINYMCE_SCRIPT_SRC} from "@tinymce/tinymce-angular";
         FormsModule,
         HttpClientModule,
         BrowserAnimationsModule,
-        NgbTypeaheadModule,
         AppRoutingModule,
         ToastrModule.forRoot(),
-        EditorModule
+        MatAutocompleteModule,
+        MatInputModule,
+        ReactiveFormsModule
     ],
     providers: [
         AuthenticationService,
@@ -72,10 +73,6 @@ import {EditorModule, TINYMCE_SCRIPT_SRC} from "@tinymce/tinymce-angular";
             provide: HTTP_INTERCEPTORS,
             useClass: HeaderInterceptor,
             multi: true
-        },
-        {
-            provide: TINYMCE_SCRIPT_SRC,
-            useValue: 'tinymce/tinymce.min.js'
         }
     ],
     bootstrap: [AppComponent]

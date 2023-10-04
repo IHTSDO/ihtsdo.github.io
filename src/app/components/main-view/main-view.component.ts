@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, NgIterable, OnInit} from '@angular/core';
 import {ToastrService} from 'ngx-toastr';
 import {ModalService} from '../../services/modal/modal.service';
 import {Observable} from 'rxjs';
 import {catchError, debounceTime, distinctUntilChanged, filter, switchMap, tap} from 'rxjs/operators';
 import {TerminologyServerService} from '../../services/terminologyServer/terminology-server.service';
+import {FormControl} from "@angular/forms";
 
 @Component({
     selector: 'app-main-view',
@@ -12,44 +13,32 @@ import {TerminologyServerService} from '../../services/terminologyServer/termino
 })
 export class MainViewComponent implements OnInit {
 
-    editorConfig = {
-        base_url: '/tinymce',
-        suffix: '.min',
-        height: 500,
-        menubar: false,
-        statusbar: false,
-        plugins: 'link table',
-        toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link | table'
-    };
-
     toastrConfig = {
         closeButton: true
     };
 
-    basicTypeahead: string;
-    spinner = document.createElement('div');
+    myControl = new FormControl('');
+    options: string[] = ['One', 'Two', 'Three'];
 
-    search = (text$: Observable<string>) => text$.pipe(
-        debounceTime(300),
-        filter((text) => text.length > 2),
-        distinctUntilChanged(),
-        tap(() => document.activeElement.parentElement.appendChild(this.spinner)),
-        switchMap(term => this.terminologyService.getTypeahead(term)
-            .pipe(tap(() => document.getElementById('spinner').remove()))
-        ),
-        catchError(tap(() => document.getElementById('spinner').remove()))
-    )
+    filteredOptions: NgIterable<any>;
 
     constructor(private toastr: ToastrService,
                 private modalService: ModalService,
                 private terminologyService: TerminologyServerService) {
-        this.spinner.id = 'spinner';
-        this.spinner.classList.add('spinner-border', 'spinner-border-sm', 'position-absolute');
-        this.spinner.style.top = '7px';
-        this.spinner.style.right = '7px';
     }
 
     ngOnInit(): void {
+        this.myControl.valueChanges
+            .subscribe(value => {
+                if(value.length >= 1){
+                    this.terminologyService.getAutocomplete(value).subscribe(response => {
+                        this.filteredOptions = response;
+                    });
+                }
+                else {
+                    return null;
+                }
+            })
     }
 
     openModal(id: string): void {
@@ -59,6 +48,20 @@ export class MainViewComponent implements OnInit {
     closeModal(id: string): void {
         this.modalService.close(id);
     }
+
+    // autocomplete() {
+    //     this.myControl.valueChanges
+    //         .subscribe(value => {
+    //             if(value.length >= 1){
+    //                 this.terminologyService.getAutocomplete(value).subscribe(response => {
+    //                     this.filteredOptions = response;
+    //                 });
+    //             }
+    //             else {
+    //                 return null;
+    //             }
+    //         })
+    // }
 
     delete(): void {
         this.toastr.error('This doesn\'t really delete anything', 'DELETE', this.toastrConfig);

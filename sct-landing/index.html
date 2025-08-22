@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNOMED International - Service Migration</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-container">
+                <img src="images/snomed-logo.png" alt="SNOMED International Logo" class="logo">
+                <h1 class="title">SNOMED International Confluence Migration</h1>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="migration-notice">
+                <h2>Service Migration Notice</h2>
+                <p>SNOMED International is transitioning to a modern suite of digital tools to support internal collaboration, external knowledge sharing, and its active global community of practice. </p>
+                <p><br>Please use one of the search options below to find the content you're looking for so that you can update your bookmarks</p>
+                <p>If you have any questions, please contact us at <a href="mailto:migration@snomed.org">migration@snomed.org</a></p>
+            </div>
+
+            <div class="search-section">
+                <div class="search-container">
+                    <div class="search-box">
+                        <h3>Search <a href="https://doc.snomed.org">SNOMED CT Documentation</a></h3>
+                        <p class="search-description">Find official SNOMED CT specifications, guides, and documentation</p>
+                        <form id="docs-search-form" class="search-form">
+                            <div class="input-group">
+                                <input 
+                                    type="text" 
+                                    id="docs-search-input" 
+                                    placeholder="Enter your document search terms..."
+                                    class="search-input"
+                                    required
+                                >
+                                <button type="submit" class="search-button">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <path d="21 21l-4.35-4.35"></path>
+                                    </svg>
+                                    Search SNOMED CT Documentation
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="search-box">
+                        <h3>Search <a href="https://snomed.atlassian.net/wiki">SNOMED Spaces</a></h3>
+                        <p class="search-description">Search SNOMED Spaces, our new Cloud Confluence workspace</p>
+                        <form id="confluence-search-form" class="search-form">
+                            <div class="input-group">
+                                <input 
+                                    type="text" 
+                                    id="confluence-search-input" 
+                                    placeholder="Enter your confluence search terms..."
+                                    class="search-input"
+                                    required
+                                >
+                                <button type="submit" class="search-button">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <path d="21 21l-4.35-4.35"></path>
+                                    </svg>
+                                    Search SNOMED Spaces
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="search-box">
+                        <h3>Search <a href="https://forums.snomed.org">SNOMED Forums</a></h3>
+                        <p class="search-description">Search discussions, questions, and community content on SNOMED Forums</p>
+                        <form id="forums-search-form" class="search-form">
+                            <div class="input-group">
+                                <input 
+                                    type="text" 
+                                    id="forums-search-input" 
+                                    placeholder="Enter your forum search terms..."
+                                    class="search-input"
+                                    required
+                                >
+                                <button type="submit" class="search-button">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <path d="21 21l-4.35-4.35"></path>
+                                    </svg>
+                                    Search SNOMED Forums
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="search-box account-box">
+                        <h3>SNOMED International Account</h3>
+                        <p class="search-description">Access your SNOMED International account to manage subscriptions, download resources, and access exclusive content and services.</p>
+                        <div class="input-group">
+                            <button type="button" class="search-button account-button" disabled>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 6v6l4 2"></path>
+                                </svg>
+                                Coming Soon
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--            <div class="additional-links">
+                <h3>Quick Links</h3>
+                <div class="links-grid">
+                    <a href="https://forums.snomed.org" class="quick-link">
+                        <h4>SNOMED Forums</h4>
+                        <p>Discuss anything about SNOMED CT with the community</p>
+                    </a>
+                    <a href="https://docs.snomed.org" class="quick-link">
+                        <h4>SNOMED CT Document Library</h4>
+                        <p>Browse all official documentation</p>
+                    </a>
+                    <a href="https://.atlassian.net" class="quick-link">
+                        <h4>SNOMED Spaces</h4>
+                        <p>Access our new collaborative workspace</p>
+                    </a>
+                    <a href="https://www.snomed.org" class="quick-link">
+                        <h4>SNOMED International Website</h4>
+                        <p>Visit our main website</p>
+                    </a>
+                </div>
+            </div>
+-->
+
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 SNOMED International. All rights reserved.</p>
+            <p>SNOMED CT® is a registered trademark of SNOMED International.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

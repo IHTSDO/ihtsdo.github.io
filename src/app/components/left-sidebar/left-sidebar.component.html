@@ -1,9 +1,0 @@
-<nav id="sidebar" class="footer-margin">
-    <div class="header row g-0">
-        <h3 class="p-3 mb-0">Chapters</h3>
-        <input type="search" class="searchbar py-2 px-3" [(ngModel)]="textFilter" placeholder="Search for Chapter...">
-    </div>
-    <ng-container *ngFor="let chapter of chapters | textFilter:textFilter">
-        <a class="py-2 px-3 d-block chapter" href="#{{chapter}}">{{chapter}}</a>
-    </ng-container>
-</nav>

@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: '20'
       #👇 Add Storybook build and deploy to GitHub Pages as a step in the workflow
-      - uses: IHTSDO/ihtsdo.github.io@b5c5be3c48d5ab96539744b1eabd1ac93d3d2acb
+      - uses: IHTSDO/ihtsdo.github.io@v0.1.1
         with:
           install_command: yarn install # default: npm ci
           build_command: yarn build-storybook # default: npm run build-storybook

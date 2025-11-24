@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7c7399f-8b7e-46a1-8ae3-1de90c89183f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/deploy.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/.storybook/ihtsdo.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/.storybook/manager.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/.storybook/snomed_wordmark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/.storybook/snomed_wordmark.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ihtsdo-workspace/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ihtsdo-workspace/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/ihtsdo-workspace/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ihtsdo-workspace/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ihtsdo-workspace/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +111,7 @@
       <workItem from="1702041936203" duration="12276000" />
       <workItem from="1734709694494" duration="1230000" />
       <workItem from="1738754630143" duration="684000" />
-      <workItem from="1763979735304" duration="7444000" />
+      <workItem from="1763979735304" duration="8135000" />
     </task>
     <servers />
   </component>

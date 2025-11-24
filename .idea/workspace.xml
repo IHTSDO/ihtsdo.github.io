@@ -7,7 +7,61 @@
     <list default="true" id="e7c7399f-8b7e-46a1-8ae3-1de90c89183f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ihtsdo-workspace/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/.claude/CLAUDE.md" beforeDir="false" afterPath="$PROJECT_DIR$/.claude/CLAUDE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/.cursor/rules/cursor.mdc" beforeDir="false" afterPath="$PROJECT_DIR$/.cursor/rules/cursor.mdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/.gemini/GEMINI.md" beforeDir="false" afterPath="$PROJECT_DIR$/.gemini/GEMINI.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/.storybook/ihtsdo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/.storybook/ihtsdo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/.storybook/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/.storybook/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/.storybook/manager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/.storybook/manager.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/.storybook/preview.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/.storybook/preview.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/.storybook/snomed_wordmark.png" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/.storybook/snomed_wordmark.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/.storybook/snomed_wordmark.svg" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/.storybook/snomed_wordmark.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/.storybook/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/.storybook/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/.storybook/typings.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/.storybook/typings.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/documentation.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/documentation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/ng-package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/ng-package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/lib/ui-components.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/lib/ui-components.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/lib/ui-components.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/lib/ui-components.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/public-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/public-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/Configure.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/Configure.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/assets/accessibility.png" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/assets/accessibility.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/assets/accessibility.svg" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/assets/accessibility.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/assets/addon-library.png" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/assets/addon-library.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/assets/assets.png" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/assets/assets.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/assets/avif-test-image.avif" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/assets/avif-test-image.avif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/assets/context.png" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/assets/context.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/assets/discord.svg" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/assets/discord.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/assets/docs.png" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/assets/docs.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/assets/figma-plugin.png" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/assets/figma-plugin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/assets/github.svg" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/assets/github.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/assets/share.png" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/assets/share.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/assets/styling.png" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/assets/styling.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/assets/testing.png" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/assets/testing.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/assets/theming.png" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/assets/theming.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/assets/tutorials.svg" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/assets/tutorials.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/assets/youtube.svg" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/assets/youtube.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/button.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/button.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/button.css" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/button.stories.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/button.stories.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/header.stories.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/header.stories.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/page.stories.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/page.stories.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/src/stories/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/src/stories/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/tsconfig.lib.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/tsconfig.lib.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/tsconfig.lib.prod.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/tsconfig.lib.prod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/tsconfig.spec.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/snomed/ui-components/tsconfig.spec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ihtsdo-workspace/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +118,7 @@
       <recent name="$PROJECT_DIR$/ihtsdo-workspace/projects/snomed/ui-components/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/assets" />
     </key>
   </component>
@@ -113,7 +168,7 @@
       <workItem from="1702041936203" duration="12276000" />
       <workItem from="1734709694494" duration="1230000" />
       <workItem from="1738754630143" duration="684000" />
-      <workItem from="1763979735304" duration="8799000" />
+      <workItem from="1763979735304" duration="9386000" />
     </task>
     <servers />
   </component>

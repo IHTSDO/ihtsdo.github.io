@@ -1,33 +1,65 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
-  "newProjectRoot": "projects",
-  "projects": {
-    "@snomed/ui-components": {
-      "projectType": "library",
-      "root": "projects/snomed/ui-components",
-      "sourceRoot": "projects/snomed/ui-components/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular/build:ng-packagr",
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/snomed/ui-components/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/snomed/ui-components/tsconfig.lib.json"
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+        "@snomed/ui-components": {
+            "projectType": "library",
+            "root": "projects/snomed/ui-components",
+            "sourceRoot": "projects/snomed/ui-components/src",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular/build:ng-packagr",
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/snomed/ui-components/tsconfig.lib.prod.json"
+                        },
+                        "development": {
+                            "tsConfig": "projects/snomed/ui-components/tsconfig.lib.json"
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "test": {
+                    "builder": "@angular/build:karma",
+                    "options": {
+                        "tsConfig": "projects/snomed/ui-components/tsconfig.spec.json"
+                    }
+                },
+                "storybook": {
+                    "builder": "@storybook/angular:start-storybook",
+                    "options": {
+                        "configDir": "projects/snomed/ui-components/.storybook",
+                        "browserTarget": "@snomed/ui-components:build",
+                        "compodoc": true,
+                        "experimentalZoneless": true,
+                        "compodocArgs": [
+                            "-e",
+                            "json",
+                            "-d",
+                            "projects/snomed/ui-components"
+                        ],
+                        "port": 6006
+                    }
+                },
+                "build-storybook": {
+                    "builder": "@storybook/angular:build-storybook",
+                    "options": {
+                        "configDir": "projects/snomed/ui-components/.storybook",
+                        "browserTarget": "@snomed/ui-components:build",
+                        "compodoc": true,
+                        "experimentalZoneless": true,
+                        "compodocArgs": [
+                            "-e",
+                            "json",
+                            "-d",
+                            "projects/snomed/ui-components"
+                        ],
+                        "outputDir": "storybook-static"
+                    }
+                }
             }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular/build:karma",
-          "options": {
-            "tsConfig": "projects/snomed/ui-components/tsconfig.spec.json"
-          }
         }
-      }
     }
-  }
 }

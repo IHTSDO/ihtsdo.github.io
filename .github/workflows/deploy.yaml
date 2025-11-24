@@ -1,3 +1,15 @@
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - id: build-publish
+        uses: IHTSDO/ihtsdo.github.io
+        with:
+          path: storybook-static
+
+
+
 # Workflow name
 name: Build and Publish Storybook to GitHub Pages
 
@@ -27,7 +39,7 @@ jobs:
         with:
           node-version: '20'
       #👇 Add Storybook build and deploy to GitHub Pages as a step in the workflow
-      - uses: IHTSDO/ihtsdo.github.io
+      - uses: IHTSDO/ihtsdo.github.io@0.1.0
         with:
           install_command: yarn install # default: npm ci
           build_command: yarn build-storybook # default: npm run build-storybook
